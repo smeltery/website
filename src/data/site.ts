@@ -3,12 +3,10 @@ export const command = "npx smeltery";
 
 export const nav = [
   { label: "Tools", href: "#tools" },
-  { label: "Agents", href: "#tools" },
-  { label: "Environment", href: "#tools" },
   { label: "Principles", href: "#principles" },
 ];
 
-/** [label, value] for desktop, then the shorter pair the mobile design uses. */
+/** Full terminal labels followed by compact phone labels. */
 export const ghostMode: [string, string, string, string][] = [
   ["Session transcript", "wiped on exit", "Transcript", "wiped"],
   ["Telemetry / phone-home", "blocked", "Telemetry", "blocked"],
@@ -74,7 +72,7 @@ export const principles = [
   { title: "Community", text: "Build in the open, for developers, with developers." },
 ];
 
-/** `only` hides an item on the other breakpoint, matching the Paper frames. */
+/** Legacy link variants; the footer uses the complete desktop resource list. */
 type Only = { only?: "desktop" | "mobile" };
 type FooterLink = Only & { label: string; href: string };
 

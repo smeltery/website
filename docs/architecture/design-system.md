@@ -1,48 +1,49 @@
 # Design system
 
-The source of truth is the `smeltery/website` Paper file. CSS custom properties
-in `src/styles/global.css` copy its tokens one-to-one.
+The site takes inspiration from `smeltery/convrt` and `smeltery/loft`:
+quiet paper backgrounds, generous spacing, serif emphasis, pill buttons,
+and playful product imagery. Smeltery keeps its existing mark and tool icons.
 
-## Tokens
+## Tokens and typography
 
-| Token | Value | Used for |
-| --- | --- | --- |
-| `--color-neutral-50` | `#FFFFFF` | Page ground |
-| `--color-neutral-100` | `#F0F0E0` | Principles band |
-| `--color-neutral-500` | `#666666` | Muted labels |
-| `--color-neutral-900` | `#0A0A0A` | Ink, terminal, footer |
-| `--color-primary` | `#FFD100` | Signage yellow, hovers, CTA band |
-| `--color-secondary` | `#1A3D28` | Eyebrows and categories |
-| `--color-accent` | `#D07050` | Principle numbers, terminal dot |
-| `--font-display` | Syne 800 | Headlines and wordmark |
-| `--font-body` | DM Sans | Body copy and nav |
-| `--font-mono` | IBM Plex Mono | Commands, terminal, metadata |
+Shared tokens live in `src/styles/global.css`:
 
-## Breakpoints
+- Paper: `#f7f7f2`; surfaces: white; ink: `#292b25`.
+- Secondary text: `#696d63`; borders: `#e1e3d9`; green: `#526447`.
+- DM Sans for headings and body, Georgia italic for editorial emphasis,
+  and IBM Plex Mono for commands and the terminal preview.
+- Content is capped at 940px with 24px side gutters, reducing to 18px on phones.
 
-```mermaid
-flowchart LR
-  w{Viewport width} -->|1024px and up| desk[Desktop frame<br/>1440px, 64px gutters]
-  w -->|below 1024px| mob[Mobile frame<br/>390px, 20px gutters]
-```
+## Components
 
-Copy that differs between frames, such as the shorter terminal labels and
-tool blurbs, lives side by side in `src/data/site.ts`. The `.desk-only` and
-`.mobile-only` utilities pick one per breakpoint.
+The rounded navigation leads into a centered hero with decorative floating
+tool icons. A sage workbench pairs introductory copy with a light fugue
+terminal preview. Featured projects occupy a three-column card grid, followed
+by principles, a command-copy panel, and resource links.
 
-## Hover states
+## Responsive behavior
 
-These come from the Paper "Hover States" page.
+At 760px the workbench stacks and cards become two columns. At 640px the
+navigation tightens, principles stack, and terminal labels shorten. At 480px
+the cards become one column and footer links become two columns. Navigation
+links remain directly available without a menu toggle.
 
-| Element | Hover |
-| --- | --- |
-| Nav link | Yellow fill, weight 600 |
-| `npx smeltery` button | Yellow fill, ink text |
-| Tool row | Yellow fill, ink rules, 16px inset, larger arrow |
-| Terminal status row | Dark amber fill, white label |
-| Mobile menu item | Yellow fill, 12px inset |
+## Interaction and accessibility
 
-## 3D renders
+Buttons and cards lift gently on hover. Decorative icons bob using CSS.
+Reduced-motion preferences disable animation and smooth scrolling. Keyboard
+users get visible focus outlines and a skip link. The command-copy button
+announces success or failure through a polite live region.
 
-`public/3d/*.webp` are the Paper renders exported at 2x their display size.
-Re-export at the same sizes when replacing them to keep the page light.
+## Assets
+
+Existing tool SVGs and the anvil WebP are served locally. Decorative imagery
+has empty alt text. Fonts are self-hosted; the page sends no telemetry.
+
+## Social preview
+
+`public/og.png` is a 1200 × 630 rendering of `scripts/og.html`, using the same
+local fonts, palette, mark, and tool icons as the site. Regenerate it with
+`bun scripts/render-og.ts` after editing the template. The renderer shares
+the headless browser cache used by `scripts/check-mermaid.ts`. The README
+and social metadata both reference the generated image.

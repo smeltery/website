@@ -2,69 +2,28 @@
 interface Props {
   eyebrow: string;
   title: string;
+  accent: string;
   lede?: string;
-  art: { src: string; size: number; mobileSize: number; top: number };
 }
-
-const { eyebrow, title, lede, art } = Astro.props;
+const { eyebrow, title, accent, lede } = Astro.props;
 ---
 
-<div class="head" style={`--size:${art.size}px;--m-size:${art.mobileSize}px;--top:${art.top}px`}>
-  <img class="art" src={art.src} alt="" width={art.size} height={art.size} loading="lazy" />
-  <div class="text">
-    <p class="eyebrow">{eyebrow}</p>
-    <h2 class="display">{title}</h2>
-    {lede && <p class="lede">{lede}</p>}
-  </div>
+<div class="head">
+  <p class="eyebrow">{eyebrow}</p>
+  <h2>
+    {title} <em>{accent}</em>
+  </h2>
+  {lede && <p class="lede">{lede}</p>}
 </div>
-
 <style>
   .head {
-    position: relative;
-  }
-  .text {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    max-width: 640px;
-  }
-  h2 {
-    font-size: 44px;
+    text-align: center;
+    max-width: 620px;
+    margin-inline: auto;
   }
   .lede {
-    max-width: 520px;
-    font-size: 18px;
-  }
-  .art {
-    position: absolute;
-    top: var(--top);
-    right: 0;
-    width: var(--size);
-    height: var(--size);
-  }
-
-  @media (max-width: 1023px) {
-    .head {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .text {
-      gap: 12px;
-    }
-    h2 {
-      font-size: 28px;
-      line-height: 110%;
-    }
-    .lede {
-      color: var(--color-neutral-500);
-      font-size: 14px;
-      line-height: 140%;
-    }
-    .art {
-      position: static;
-      width: var(--m-size);
-      height: var(--m-size);
-    }
+    margin-top: 18px;
+    font-size: 15px;
+    text-wrap: balance;
   }
 </style>

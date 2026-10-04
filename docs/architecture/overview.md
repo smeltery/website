@@ -1,25 +1,25 @@
 # Architecture
 
 The site is one static page. Astro renders it at build time, inlines the CSS,
-and emits a single `index.html` plus assets. Two tiny inline scripts handle the
-mobile menu and the copy-to-clipboard command button; nothing else runs in the
-browser.
+and emits a single `index.html` plus assets. A tiny inline script handles the
+copy-to-clipboard command button. Decorative motion uses CSS and respects
+reduced-motion preferences.
 
 ## Page composition
 
-Each component maps to one frame in the Paper file.
+Each component owns one section of the page.
 
 ```mermaid
 flowchart TD
   index[pages/index.astro] --> Base[layouts/Base.astro<br/>meta, OG, fonts, copy script]
-  Base --> Nav[Nav<br/>desktop links and mobile menu]
+  Base --> Nav[Nav<br/>responsive navigation]
   Base --> Hero
   Hero --> Terminal[Terminal<br/>fugue ghost mode demo]
-  Base --> Tools[Tools<br/>featured tool rows]
+  Base --> Tools[Tools<br/>featured tool cards]
   Base --> Principles
   Tools --> SectionHead
   Principles --> SectionHead
-  Base --> Cta[Cta<br/>Say hello band]
+  Base --> Cta[Cta<br/>Say hello panel]
   Base --> Footer
   data[(data/site.ts)] -.-> Nav & Terminal & Tools & Principles & Cta & Footer
 ```
@@ -39,10 +39,10 @@ flowchart LR
 ## Choices
 
 - **Astro** renders components to HTML with no runtime, which keeps the
-  page close to the static Paper frames.
-- **Scoped CSS per component** keeps each frame's styles next to its markup.
+  page fast and lightweight.
+- **Scoped CSS per component** keeps each section's styles next to its markup.
   Shared tokens and utilities live in `src/styles/global.css`.
 - **Self-hosted fonts** through Fontsource avoid third-party requests,
   matching the "privacy by default" principle.
-- **One breakpoint** at 1024px switches between the 1440px desktop frame and
-  the 390px mobile frame.
+- **Responsive layouts** use 760px, 640px, and 480px breakpoints to adapt
+  the workbench, navigation, tool grid, and footer.

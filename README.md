@@ -11,9 +11,11 @@
 [![Docs: Mermaid](https://img.shields.io/badge/docs-mermaid%20validated-ff3670?logo=mermaid&logoColor=white)](docs/README.md)
 [![JS shipped: ~1 KB](https://img.shields.io/badge/client%20JS-~1%20KB-0a0a0a.svg)](docs/architecture/overview.md)
 
-The Smeltery Labs landing page: a static Astro site built 1:1 from the
-`smeltery/website` Paper design. It ships zero framework JavaScript, self-hosts
+The Smeltery Labs landing page: a static Astro site inspired by the
+quiet, playful design of `smeltery/convrt` and `smeltery/loft`. It ships zero framework JavaScript, self-hosts
 its fonts, and sends no telemetry.
+
+![Smeltery Labs: Less friction. More making. Warm paper background, sage serif accents, and floating tool icons.](public/og.png)
 
 ```console
 $ flox activate
@@ -23,7 +25,7 @@ $ bun run verify     # everything CI checks
 
 ## What is here
 
-- `src/` holds the page, one Astro component per Paper frame, and the design
+- `src/` holds the page, one Astro component per section, and the design
   tokens.
 - `src/data/site.ts` holds every piece of copy, link, and tool listing.
 - `public/` holds the mark, tool icons, optimized 3D renders, and the OG image.

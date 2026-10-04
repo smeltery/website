@@ -1,5 +1,4 @@
 ---
-import "@fontsource-variable/syne";
 import "@fontsource-variable/dm-sans";
 import "@fontsource/ibm-plex-mono/400.css";
 import "@fontsource/ibm-plex-mono/500.css";
@@ -19,7 +18,7 @@ const og = new URL("/og.png", Astro.site).href;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="theme-color" content="#f7f7f2" />
     <link rel="canonical" href={Astro.site} />
     <link rel="icon" type="image/svg+xml" href="/mark.svg" />
     <link rel="icon" type="image/png" href="/favicon.png" />
@@ -37,16 +36,19 @@ const og = new URL("/og.png", Astro.site).href;
     <slot />
     <script>
       for (const button of document.querySelectorAll<HTMLButtonElement>("[data-copy]")) {
-        const label = button.textContent;
+        const label = button.querySelector<HTMLElement>("[data-copy-label]") ?? button;
+        const originalText = label.textContent;
+        let resetTimer: ReturnType<typeof setTimeout>;
         button.addEventListener("click", async () => {
+          clearTimeout(resetTimer);
           try {
             await navigator.clipboard.writeText(button.dataset.copy ?? "");
-            button.textContent = "copied";
+            label.textContent = "copied";
           } catch (error) {
             console.error("clipboard write failed", error);
-            button.textContent = "copy blocked";
+            label.textContent = "copy blocked";
           }
-          setTimeout(() => (button.textContent = label), 1200);
+          resetTimer = setTimeout(() => (label.textContent = originalText), 1600);
         });
       }
     </script>

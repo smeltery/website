@@ -4,112 +4,196 @@ import Terminal from "./Terminal.astro";
 ---
 
 <section class="hero wrap">
-  <div class="copy">
-    <div class="intro">
-      <p class="eyebrow">Open source developer tools</p>
-      <h1 class="display">Developer tools that cut the friction out of building.</h1>
+  <div class="intro">
+    <div class="confetti" aria-hidden="true">
+      <img class="float ember" src="/tools/ember.svg" alt="" width="60" height="60" />
+      <img class="float fugue" src="/tools/fugue.svg" alt="" width="60" height="60" />
+      <img class="float context" src="/tools/context.svg" alt="" width="60" height="60" />
+      <img class="float airlock" src="/tools/airlock.svg" alt="" width="60" height="60" />
+      <span class="spark one">✳</span>
+      <span class="spark two">✦</span>
     </div>
+    <p class="eyebrow">
+      <span class="dot"></span> A small collective. A lot of little tools.
+    </p>
+    <h1>
+      Less friction.
+      <br />
+      More <em>making.</em>
+    </h1>
     <p class="lede">
-      AI coding agents, machine setup, and everyday CLIs. Less time wrestling your stack. More time
-      shipping.
+      Thoughtful developer tools for the work you love.
+      <br class="desk-only" /> From your first command to your next big idea.
     </p>
     <div class="actions">
-      <a class="btn btn-primary see" href="#tools">
-        See the tools
+      <a class="btn btn-primary" href="#tools">
+        Find your next tool <span aria-hidden="true">↓</span>
       </a>
-      <a class="btn btn-outline forge" href={github}>
-        Browse the forge
+      <a class="text-link" href={github}>
+        Explore the forge ↗
       </a>
     </div>
+    <p class="fine">Built in the open. Made to fit your day.</p>
   </div>
-  <div class="demo">
+  <div class="workbench">
+    <div class="note">
+      <p class="eyebrow">A little less in your way</p>
+      <h2>
+        Your workflow.
+        <br />
+        <em>With room to breathe.</em>
+      </h2>
+      <p class="lede">
+        AI agents, everyday CLIs, and a setup that feels like yours. Small tools that do their job,
+        then get out of the way.
+      </p>
+      <a class="text-link" href={`${github}/fugue`}>
+        Meet fugue <span aria-hidden="true">↗</span>
+      </a>
+    </div>
     <Terminal />
   </div>
 </section>
-
 <style>
-  .hero {
-    display: flex;
-    gap: 56px;
-    min-height: 760px;
-    padding-bottom: 40px;
-  }
-  .copy {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    justify-content: center;
-    gap: 32px;
-  }
   .intro {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    position: relative;
+    padding: 105px 0 76px;
+    text-align: center;
   }
   h1 {
-    font-size: 64px;
-    letter-spacing: -0.045em;
-    line-height: 102%;
+    font-size: clamp(52px, 7vw, 78px);
+    line-height: 1.04;
+    letter-spacing: -0.065em;
   }
-  .lede {
-    max-width: 520px;
-    font-size: 20px;
+  h1 em {
+    color: var(--green);
+  }
+  .intro .lede {
+    margin: 25px auto;
+    font-size: 16px;
+    max-width: 450px;
+  }
+  .dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: #82906a;
+    border-radius: 50%;
+    margin: 0 7px 1px 0;
   }
   .actions {
     display: flex;
-    gap: 14px;
-  }
-  .see {
-    padding: 16px 28px;
-  }
-  .forge {
-    padding: 14px 22px;
-    font: 500 14px/18px var(--font-mono);
-  }
-  .demo {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    flex-shrink: 0;
-    width: 560px;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 16px;
   }
-
-  @media (max-width: 1023px) {
-    .hero {
-      flex-direction: column;
-      gap: 28px;
-      min-height: 0;
-      padding-block: 32px 36px;
+  .confetti {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .float {
+    position: absolute;
+    filter: drop-shadow(0 10px 8px #292b2512);
+    animation: bob 6s ease-in-out infinite alternate;
+  }
+  .ember {
+    left: 7%;
+    top: 105px;
+    rotate: -16deg;
+  }
+  .fugue {
+    right: 7%;
+    top: 115px;
+    rotate: 13deg;
+    animation-delay: -2s;
+  }
+  .context {
+    left: 1%;
+    top: 300px;
+    rotate: 10deg;
+    animation-delay: -4s;
+  }
+  .airlock {
+    right: 2%;
+    top: 320px;
+    rotate: -13deg;
+    animation-delay: -1s;
+  }
+  .spark {
+    position: absolute;
+    color: #b4bda3;
+    font-size: 25px;
+  }
+  .one {
+    left: 19%;
+    top: 250px;
+  }
+  .two {
+    right: 19%;
+    top: 60px;
+    color: #d3bb79;
+  }
+  .workbench {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: center;
+    gap: 42px;
+    padding: 40px;
+    background: #eceee5;
+    border: 1px solid #e1e4d8;
+    border-radius: 24px;
+  }
+  .note h2 {
+    font-size: 29px;
+  }
+  .note .lede {
+    font-size: 14px;
+    margin: 18px 0;
+  }
+  @keyframes bob {
+    to {
+      transform: translateY(-10px);
     }
-    .copy {
-      gap: 24px;
-    }
+  }
+  @media (max-width: 760px) {
     .intro {
-      gap: 14px;
+      padding-top: 90px;
     }
-    h1 {
-      font-size: 34px;
-      letter-spacing: -0.04em;
-      line-height: 105%;
+    .float {
+      width: 40px;
+      height: 40px;
     }
-    .lede {
-      margin-top: -10px;
-      font-size: 16px;
+    .ember {
+      left: 2%;
+      top: 28px;
     }
+    .fugue {
+      right: 3%;
+      top: 35px;
+    }
+    .context,
+    .airlock,
+    .spark {
+      display: none;
+    }
+    .workbench {
+      grid-template-columns: 1fr;
+      padding: 26px;
+      gap: 26px;
+    }
+    .note {
+      max-width: 420px;
+    }
+  }
+  @media (max-width: 380px) {
     .actions {
+      gap: 16px;
       flex-direction: column;
-      gap: 10px;
     }
-    .see {
-      padding: 14px 20px;
-      font-size: 15px;
-      line-height: 18px;
-    }
-    .forge {
-      padding: 12px 20px;
-    }
-    .demo {
-      width: 100%;
+    .workbench {
+      padding: 20px 14px;
     }
   }
 </style>

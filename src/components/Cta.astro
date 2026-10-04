@@ -2,129 +2,49 @@
 import { command, github } from "../data/site";
 ---
 
-<section class="band">
-  <div class="inner wrap">
-    <div class="copy">
-      <h2 class="display">Say hello from your terminal.</h2>
-      <p>One command. Meet the collective, then dig into the tools that fit your workflow.</p>
-    </div>
-    <div class="art" aria-hidden="true">
-      <img src="/3d/hammer.webp" alt="" width="120" height="120" loading="lazy" />
-      <img
-        class="crucible"
-        src="/3d/crucible.webp"
-        alt=""
-        width="110"
-        height="110"
-        loading="lazy"
-      />
-    </div>
-    <div class="actions">
-      <button class="btn btn-cmd run" data-copy={command}>
-        {command}
-      </button>
-      <a class="btn btn-outline github" href={github}>
-        Browse GitHub
-      </a>
-    </div>
+<section class="hello wrap">
+  <div class="art" aria-hidden="true">
+    <img src="/3d/anvil.webp" alt="" width="100" height="100" loading="lazy" />
   </div>
+  <p class="eyebrow">Your next idea is waiting</p>
+  <h2>
+    A little less setup.
+    <br />
+    <em>A little more possibility.</em>
+  </h2>
+  <p class="lede">Say hello from your terminal.</p>
+  <button class="btn btn-cmd" data-copy={command} aria-label="Copy npx smeltery" aria-live="polite">
+    <span data-copy-label>{command}</span>
+    <span aria-hidden="true">⧉</span>
+  </button>
+  <p class="fine">One command to meet the collective.</p>
+  <a class="text-link" href={github}>
+    Or have a look around GitHub ↗
+  </a>
 </section>
-
 <style>
-  .band {
-    background: var(--color-primary);
+  .hello {
+    text-align: center;
+    padding: 45px 24px 60px;
+    background: #eeeee7;
+    border-radius: 24px;
   }
-  .inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 48px;
-    padding-block: 72px;
+  .art img {
+    margin: 0 auto 15px;
   }
-  .copy {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    gap: 12px;
-    font-size: 18px;
-    line-height: 145%;
+  .hello .lede {
+    margin: 22px 0;
+    font-size: 15px;
   }
-  .copy p {
-    max-width: 480px;
+  .btn-cmd {
+    font-family: var(--font-mono);
+    min-width: 190px;
   }
-  h2 {
-    font-size: 40px;
+  .fine {
+    margin-top: 13px;
   }
-  .art {
-    position: relative;
-    display: flex;
-    align-items: end;
-    flex-shrink: 0;
-    width: 238px;
-    height: 120px;
-  }
-  .crucible {
-    position: absolute;
-    top: 10px;
-    left: 128px;
-  }
-  .actions {
-    display: flex;
-    flex-shrink: 0;
-    gap: 14px;
-  }
-  .run {
-    padding: 18px 24px;
-  }
-  .run:hover {
-    background: var(--color-neutral-50);
-  }
-  .github {
-    padding: 16px 22px;
-    font: 700 15px/18px var(--font-display);
-  }
-
-  @media (max-width: 1023px) {
-    .inner {
-      flex-direction: column;
-      align-items: stretch;
-      gap: 24px;
-      padding-block: 48px;
-    }
-    .copy {
-      gap: 24px;
-      font-size: 15px;
-    }
-    h2 {
-      font-size: 28px;
-      line-height: 110%;
-    }
-    .art {
-      order: -1;
-      gap: 4px;
-      width: auto;
-      height: auto;
-    }
-    .art img {
-      width: 96px;
-      height: 96px;
-    }
-    .art .crucible {
-      position: static;
-      width: 88px;
-      height: 88px;
-    }
-    .actions {
-      flex-direction: column;
-      gap: 10px;
-    }
-    .run {
-      padding: 14px 20px;
-      font-size: 14px;
-    }
-    .github {
-      padding: 12px 20px;
-      font-size: 14px;
-    }
+  .text-link {
+    display: inline-block;
+    margin-top: 27px;
   }
 </style>

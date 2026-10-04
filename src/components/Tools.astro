@@ -5,180 +5,165 @@ import SectionHead from "./SectionHead.astro";
 
 <section class="tools wrap" id="tools">
   <SectionHead
-    eyebrow="Featured tools"
-    title="Built for the jobs you actually have."
-    lede="Each tool solves one sharp problem. No platform lock-in. No dark patterns."
-    art={{ src: "/3d/anvil.webp", size: 160, mobileSize: 96, top: 36 }}
+    eyebrow="The toolbox"
+    title="Small tools."
+    accent="Good company."
+    lede="For the jobs you actually have. Each one solves a sharp problem, with a little care for the details."
   />
   <ul class="list">
     {tools.map((tool) => (
       <li>
-        <a class="row" href={`${github}/${tool.name}`}>
-          {tool.icon && <img class="icon" src={tool.icon} alt="" width="48" height="48" />}
-          <span class="name">
-            <span class="tool">{tool.name}</span>
-            <span class="cat">{tool.category}</span>
-          </span>
-          <span class:list={["blurb", { indent: tool.icon }]}>
-            <span class="desk-only">{tool.blurb}</span>
-            <span class="mobile-only">{tool.short}</span>
-          </span>
-          <span class="plat">{tool.platform}</span>
-          <span class="arrow" aria-hidden="true">
-            →
-          </span>
+        <a class="card" href={`${github}/${tool.name}`}>
+          <div class="top">
+            {tool.icon ? (
+              <img src={tool.icon} alt="" width="48" height="48" loading="lazy" />
+            ) : (
+              <span class="setup" aria-hidden="true">
+                ~ /
+              </span>
+            )}
+            <span class="platform">{tool.platform}</span>
+          </div>
+          <h3>{tool.name}</h3>
+          <p>{tool.blurb}</p>
+          <div class="bottom">
+            <span>{tool.category}</span>
+            <span class="arrow" aria-hidden="true">
+              ↗
+            </span>
+          </div>
         </a>
       </li>
     ))}
+    <li class="all">
+      <a class="card" href={github}>
+        <span class="collection" aria-hidden="true">
+          ✳
+        </span>
+        <h3>
+          There’s more
+          <br />
+          <em>in the forge.</em>
+        </h3>
+        <p>Find the next little thing that makes your day a little better.</p>
+        <div class="bottom">
+          <span>Explore all projects</span>
+          <span class="arrow" aria-hidden="true">
+            ↗
+          </span>
+        </div>
+      </a>
+    </li>
   </ul>
-  <div class="more">
-    <p>Showing {tools.length} of 90+ open projects</p>
-    <a href={github}>
-      View all tools <span aria-hidden="true">→</span>
-    </a>
-  </div>
+  <p class="fine">Made for real workflows. Built in the open.</p>
 </section>
-
 <style>
   .tools {
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
-    padding-block: 96px;
+    padding-block: 110px 96px;
   }
   .list {
-    border-top: 2px solid var(--color-neutral-900);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 40px;
   }
-  li:not(:last-child) {
-    border-bottom: 1px solid #dddddd;
-  }
-  li:last-child {
-    border-bottom: 2px solid var(--color-neutral-900);
-  }
-  .row {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 24px 0;
-    transition:
-      background var(--ease),
-      padding var(--ease);
-  }
-  .row:hover {
-    padding-inline: 16px;
-    background: var(--color-primary);
-    box-shadow:
-      inset 0 2px var(--color-neutral-900),
-      inset 0 -1px var(--color-neutral-900);
-  }
-  .icon {
-    flex-shrink: 0;
-  }
-  .name {
+  .card {
     display: flex;
     flex-direction: column;
-    flex-shrink: 0;
-    gap: 6px;
-    width: 160px;
+    height: 100%;
+    padding: 25px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: #ffffffa8;
+    transition:
+      transform var(--ease),
+      box-shadow var(--ease);
   }
-  .tool {
-    font: 600 18px/22px var(--font-mono);
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px #292b2509;
   }
-  .cat {
-    color: var(--color-secondary);
-    font: 500 13px/16px var(--font-body);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-  .blurb {
-    flex: 1;
-    font-size: 17px;
-    line-height: 140%;
-  }
-  .plat {
-    flex-shrink: 0;
-    width: 80px;
-    color: var(--color-neutral-500);
-    font: 13px/16px var(--font-mono);
-    text-align: right;
-  }
-  .row:hover .plat {
-    color: var(--color-neutral-900);
-  }
-  .arrow {
-    font: 700 18px/22px var(--font-display);
-    transition: font-size var(--ease);
-  }
-  .row:hover .arrow {
-    font-size: 22px;
-  }
-  .more {
+  .top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 8px;
-    color: var(--color-neutral-500);
-    font-size: 15px;
-    line-height: 18px;
+    margin-bottom: 24px;
   }
-  .more a {
-    color: var(--color-neutral-900);
-    font: 700 15px/18px var(--font-display);
+  .platform {
+    font-size: 10px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 3px 9px;
+    color: var(--muted);
   }
-  .more a:hover {
-    text-decoration: underline 2px var(--color-primary);
-    text-underline-offset: 4px;
+  .setup {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    background: #e8ecdf;
+    color: var(--green);
+    border: 1px solid #d9dfcc;
+    border-radius: 12px;
+    font: 16px var(--font-mono);
+    rotate: -6deg;
   }
-
-  @media (max-width: 1023px) {
+  h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+  }
+  .card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 26px;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .arrow {
+    font-size: 18px;
+    color: var(--ink);
+  }
+  .all .card {
+    background: #eceee5;
+    border-color: #e0e4d6;
+  }
+  .collection {
+    color: #7f8e69;
+    font-size: 38px;
+    line-height: 48px;
+    margin-bottom: 24px;
+  }
+  .all h3 {
+    font-size: 26px;
+  }
+  .fine {
+    text-align: center;
+    margin-top: 24px;
+  }
+  @media (max-width: 760px) {
+    .list {
+      grid-template-columns: repeat(2, 1fr);
+    }
     .tools {
-      gap: 28px;
-      padding-block: 48px;
+      padding-block: 80px;
     }
-    .row {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      grid-template-areas: "icon name arrow" "blurb blurb blurb";
-      align-items: center;
-      gap: 8px 0;
-      padding-block: 20px;
+  }
+  @media (max-width: 480px) {
+    .list {
+      grid-template-columns: 1fr;
     }
-    .icon {
-      grid-area: icon;
-      width: 36px;
-      height: 36px;
-      margin-right: 14px;
+    .card {
+      padding: 24px;
     }
-    .name {
-      grid-area: name;
-      width: auto;
-    }
-    .tool {
-      font-size: 16px;
-      line-height: 20px;
-    }
-    .cat,
-    .plat {
-      display: none;
-    }
-    .blurb {
-      grid-area: blurb;
-      font-size: 14px;
-    }
-    .indent {
-      padding-left: 50px;
-    }
-    .arrow {
-      grid-area: arrow;
-      font-size: 16px;
-      line-height: 20px;
-    }
-    .more {
-      padding-top: 16px;
-      font: 12px/16px var(--font-mono);
-    }
-    .more a {
-      font: 600 14px/18px var(--font-body);
+    .top {
+      margin-bottom: 18px;
     }
   }
 </style>

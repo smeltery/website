@@ -9,7 +9,7 @@ const attrs = (name: string) =>
 describe("built page", () => {
   test("has every designed section", () => {
     for (const marker of [
-      "Developer tools that cut the friction out of building.",
+      "Less friction.",
       'id="tools"',
       'id="principles"',
       "Say hello from your terminal.",

@@ -1,217 +1,140 @@
 ---
-import { ghostMode, github } from "../data/site";
+import { ghostMode } from "../data/site";
 ---
 
-<div class="stage">
-  <figure class="term" aria-label="fugue running a coding agent in ghost mode">
-    <div class="chrome" aria-hidden="true">
+<figure class="term" aria-label="Illustrative preview of fugue ghost mode">
+  <figcaption class="chrome">
+    <span class="lights" aria-hidden="true">
       <i></i>
       <i></i>
       <i></i>
-      <span>fugue · ghost mode</span>
-    </div>
-    <div class="body">
-      <p class="cmd">
-        <span class="ps">$</span>
-        <span>
-          fugue claude <span class="arg">"refactor the auth module"</span>
-        </span>
-      </p>
-      <p class="badge">
-        <img src="/tools/fugue.svg" alt="" width="20" height="20" />
-        Ghost mode active
-      </p>
-      <dl>
-        {ghostMode.map(([label, value, shortLabel, shortValue]) => (
-          <div>
-            <dt>
-              <span class="desk-only">{label}</span>
-              <span class="mobile-only">{shortLabel}</span>
-            </dt>
-            <dd>
-              <span class="desk-only">{value}</span>
-              <span class="mobile-only">{shortValue}</span>
-            </dd>
-          </div>
-        ))}
-      </dl>
-      <p class="caption">
-        <span class="arrow">→</span>
-        <span class="desk-only">One of 90+ tools from Smeltery</span>
-        <span class="mobile-only">One of 90+ Smeltery tools</span>
-        <a class="desk-only" href={github}>
-          browse the forge
-        </a>
-      </p>
-    </div>
-  </figure>
-  <img class="palm" src="/3d/palm.webp" alt="" width="180" height="180" />
-</div>
-
+    </span>
+    <span>fugue — ghost mode</span>
+  </figcaption>
+  <div class="body">
+    <p class="cmd">
+      <span class="ps">~</span> fugue claude
+      <br />
+      <span class="arg">"refactor the auth module"</span>
+    </p>
+    <p class="badge">
+      <span aria-hidden="true">●</span> Ghost mode active
+    </p>
+    <dl>
+      {ghostMode.map(([label, value, shortLabel, shortValue]) => (
+        <div>
+          <dt>
+            <span class="desk-only">{label}</span>
+            <span class="mobile-only">{shortLabel}</span>
+          </dt>
+          <dd>
+            <span class="desk-only">{value}</span>
+            <span class="mobile-only">{shortValue}</span>
+          </dd>
+        </div>
+      ))}
+    </dl>
+    <p class="caption">
+      <span aria-hidden="true">↳</span> A little more peace of mind.
+      <span class="cursor" aria-hidden="true"></span>
+    </p>
+  </div>
+</figure>
 <style>
-  .stage {
-    position: relative;
-  }
   .term {
-    display: flex;
-    flex-direction: column;
-    overflow: clip;
-    background: var(--color-neutral-900);
-    border-left: 6px solid var(--color-primary);
-    font: 13px/16px var(--font-mono);
+    min-width: 0;
+    background: #ffffff;
+    border: 1px solid #d8dcd0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow:
+      0 12px 28px #353c2510,
+      0 2px 4px #353c2508;
+    font: 11px/1.6 var(--font-mono);
+    transform: rotate(1deg);
   }
   .chrome {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 14px 16px;
-    background: #141414;
-    color: #888888;
-    font-size: 12px;
+    gap: 16px;
+    background: #f9f9f6;
+    padding: 13px 16px;
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 10px;
   }
-  .chrome i {
-    width: 10px;
-    height: 10px;
+  .lights {
+    display: flex;
+    gap: 5px;
+  }
+  .lights i {
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    background: var(--color-accent);
+    background: #dfa49a;
   }
-  .chrome i:nth-child(2) {
-    background: var(--color-primary);
+  .lights i:nth-child(2) {
+    background: #dec484;
   }
-  .chrome i:nth-child(3) {
-    background: var(--color-secondary);
-  }
-  .chrome span {
-    padding-left: 8px;
+  .lights i:nth-child(3) {
+    background: #a9bc96;
   }
   .body {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    padding: 28px 24px 32px;
+    padding: 24px 20px;
   }
   .cmd {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-    color: var(--color-neutral-50);
-    font-size: 14px;
-    line-height: 18px;
+    font-size: 12px;
   }
-  .ps,
-  .arrow {
-    color: var(--color-primary);
+  .ps {
+    color: var(--green);
+  }
+  .arg {
+    color: var(--muted);
+    padding-left: 15px;
   }
   .badge {
-    display: flex;
-    align-items: center;
-    align-self: start;
-    gap: 10px;
-    padding: 8px 12px;
-    background: #1f1a00;
-    color: var(--color-primary);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-  dl {
-    border-top: 1px solid #2a2a2a;
+    display: inline-flex;
+    gap: 7px;
+    background: #edf2e8;
+    color: #526447;
+    border-radius: 5px;
+    padding: 5px 9px;
+    margin: 19px 0 14px;
+    font-size: 10px;
   }
   dl div {
     display: flex;
     justify-content: space-between;
-    gap: 16px;
-    margin-inline: -10px;
-    padding: 12px 10px;
-    color: #aaaaaa;
-    transition: background var(--ease);
+    gap: 10px;
+    padding: 9px 0;
+    border-top: 1px solid #eeeee8;
   }
-  dl div:not(:last-child) {
-    border-bottom: 1px solid #2a2a2a;
-  }
-  dl div:hover {
-    background: #1f1a00;
-    color: var(--color-neutral-50);
+  dt {
+    color: var(--muted);
   }
   dd {
-    color: var(--color-primary);
-    font-weight: 600;
+    color: var(--green);
+    text-align: right;
   }
   .caption {
-    display: flex;
-    gap: 10px;
-    padding-top: 8px;
-    color: var(--color-neutral-50);
+    margin-top: 20px;
+    font-size: 10px;
+    color: var(--muted);
   }
-  .caption a {
-    color: #888888;
-    transition: color var(--ease);
+  .cursor {
+    display: inline-block;
+    width: 5px;
+    height: 11px;
+    background: #96a385;
+    margin-left: 7px;
+    vertical-align: middle;
   }
-  .caption a:hover {
-    color: var(--color-primary);
-  }
-  .palm {
-    position: absolute;
-    top: -69px;
-    right: -30px;
-  }
-
-  @media (max-width: 1023px) {
+  @media (max-width: 640px) {
     .term {
-      border-left-width: 4px;
-    }
-    .chrome {
-      gap: 6px;
-      padding: 12px 14px;
-      font-size: 11px;
-      line-height: 14px;
-    }
-    .chrome i {
-      width: 8px;
-      height: 8px;
-    }
-    .chrome span {
-      padding-left: 6px;
+      transform: none;
     }
     .body {
-      gap: 14px;
-      padding: 18px 14px 20px;
-      font-size: 12px;
-    }
-    .cmd {
-      gap: 8px;
-      font-size: 13px;
-      line-height: 16px;
-    }
-    .arg {
-      display: block;
-      margin-top: 6px;
-      color: #aaaaaa;
-    }
-    .badge {
-      gap: 8px;
-      padding: 6px 10px;
-      font-size: 11px;
-      line-height: 14px;
-    }
-    .badge img {
-      width: 16px;
-      height: 16px;
-    }
-    dl div {
-      gap: 12px;
-      padding-block: 10px;
-    }
-    .caption {
-      gap: 8px;
-      padding-top: 4px;
-    }
-    .palm {
-      top: -36px;
-      right: 8px;
-      width: 110px;
-      height: 110px;
+      padding: 20px 14px;
     }
   }
 </style>

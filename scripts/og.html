@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Smeltery Labs social preview</title>
+    <style>
+      @font-face {
+        font-family: "DM Sans";
+        src: url("../node_modules/@fontsource-variable/dm-sans/files/dm-sans-latin-wght-normal.woff2")
+          format("woff2");
+        font-weight: 100 900;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      body {
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background: #f7f7f2;
+        color: #292b25;
+        font-family: "DM Sans", sans-serif;
+      }
+      .brand {
+        position: absolute;
+        top: 42px;
+        left: 54px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 25px;
+        font-weight: 650;
+        letter-spacing: -1.2px;
+      }
+      .brand img {
+        width: 34px;
+        height: 34px;
+      }
+      .brand span {
+        color: #696d63;
+        font-weight: 400;
+        margin-left: -4px;
+      }
+      .tag {
+        position: absolute;
+        right: 54px;
+        top: 46px;
+        color: #696d63;
+        font-size: 15px;
+      }
+      main {
+        position: absolute;
+        top: 142px;
+        width: 100%;
+        text-align: center;
+      }
+      .eyebrow {
+        color: #696d63;
+        font-size: 16px;
+        letter-spacing: 0.3px;
+        margin-bottom: 24px;
+      }
+      .dot {
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #82906a;
+        margin-right: 9px;
+        vertical-align: 2px;
+      }
+      h1 {
+        font-size: 92px;
+        font-weight: 550;
+        letter-spacing: -5px;
+        line-height: 1.05;
+      }
+      em {
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 400;
+        color: #526447;
+      }
+      .description {
+        margin-top: 26px;
+        color: #696d63;
+        font-size: 21px;
+        line-height: 1.55;
+      }
+      .icon {
+        position: absolute;
+        width: 76px;
+        height: 76px;
+        filter: drop-shadow(0 12px 12px #292b2515);
+      }
+      .ember {
+        left: 108px;
+        top: 166px;
+        transform: rotate(-15deg);
+      }
+      .fugue {
+        right: 112px;
+        top: 171px;
+        transform: rotate(13deg);
+      }
+      .context {
+        left: 63px;
+        top: 345px;
+        transform: rotate(11deg);
+      }
+      .airlock {
+        right: 69px;
+        top: 352px;
+        transform: rotate(-12deg);
+      }
+      .spark {
+        position: absolute;
+        color: #b4bda3;
+        font-size: 28px;
+      }
+      .one {
+        left: 230px;
+        top: 323px;
+      }
+      .two {
+        right: 237px;
+        top: 110px;
+        color: #c5ac6d;
+      }
+      footer {
+        position: absolute;
+        bottom: 35px;
+        left: 54px;
+        right: 54px;
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid #e1e3d9;
+        padding-top: 20px;
+        color: #696d63;
+        font-size: 14px;
+      }
+      .status {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+      }
+      .status .dot {
+        width: 6px;
+        height: 6px;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="brand"><img src="../public/mark.svg" alt="" />smeltery<span>labs</span></div>
+    <p class="tag">Thoughtful developer tools.</p>
+    <main>
+      <p class="eyebrow"><span class="dot"></span>A small collective. A lot of little tools.</p>
+      <h1>Less friction.<br />More <em>making.</em></h1>
+      <p class="description">
+        From your first command to your next big idea.<br />Built in the open. Made to fit your day.
+      </p>
+    </main>
+    <div aria-hidden="true">
+      <img class="icon ember" src="../public/tools/ember.svg" alt="" />
+      <img class="icon fugue" src="../public/tools/fugue.svg" alt="" />
+      <img class="icon context" src="../public/tools/context.svg" alt="" />
+      <img class="icon airlock" src="../public/tools/airlock.svg" alt="" />
+      <span class="spark one">✳</span><span class="spark two">✦</span>
+    </div>
+    <footer>
+      <span>github.com/smeltery</span><span class="status"><span class="dot"></span>forge hot</span>
+    </footer>
+  </body>
+</html>
