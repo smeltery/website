@@ -1,0 +1,73 @@
+# CI's hygiene job runs `pre-commit run --all-files` with this exact file, and
+# its build job runs the pre-push hook's commands. Every local hook enters the
+# Flox environment through scripts/flox-run.sh, so tool versions match CI.
+default_install_hook_types: [pre-commit, pre-push]
+default_stages: [pre-commit]
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: 3e8a8703264a2f4a69428a0aa4dcb512790b2c8c # v6.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-merge-conflict
+      - id: check-yaml
+      - id: check-added-large-files
+        args: [--maxkb=300]
+
+  - repo: local
+    hooks:
+      - id: prettier
+        name: prettier
+        entry: scripts/flox-run.sh bun run format:check
+        language: system
+        pass_filenames: false
+        types_or: [astro, ts, javascript, css, json, yaml]
+      - id: astro-check
+        name: astro check
+        entry: scripts/flox-run.sh bun run check
+        language: system
+        pass_filenames: false
+        files: \.(astro|ts|mjs)$|^tsconfig\.json$
+      - id: markdownlint
+        name: markdownlint
+        entry: scripts/flox-run.sh bun run lint:md
+        language: system
+        pass_filenames: false
+        types: [markdown]
+      - id: mermaid
+        name: mermaid diagrams render
+        entry: scripts/flox-run.sh bun scripts/check-mermaid.ts
+        language: system
+        pass_filenames: false
+        types: [markdown]
+      - id: links
+        name: markdown links (offline)
+        entry: scripts/flox-run.sh lychee --config lychee.toml README.md docs
+        language: system
+        pass_filenames: false
+        types: [markdown]
+      - id: budgets
+        name: LOC and flat-directory budgets
+        entry: scripts/flox-run.sh bun scripts/check-budgets.ts
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: actionlint
+        name: actionlint
+        entry: scripts/flox-run.sh actionlint
+        language: system
+        pass_filenames: false
+        files: ^\.github/workflows/
+      - id: shellcheck
+        name: shellcheck
+        entry: scripts/flox-run.sh shellcheck
+        language: system
+        types: [shell]
+      - id: build-test
+        name: build and smoke test
+        entry: scripts/flox-run.sh sh -c 'bun run build && bun test'
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-push]

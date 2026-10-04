@@ -1,0 +1,38 @@
+schema-version = "1.16.0"
+
+# One toolchain for laptops, pre-commit, and CI: every workflow job runs
+# inside `flox activate`, so versions here are the versions CI uses.
+[install]
+bun.pkg-path = "bun"
+nodejs_22.pkg-path = "nodejs_22"
+git.pkg-path = "git"
+gh.pkg-path = "gh"
+jq.pkg-path = "jq"
+pre-commit.pkg-path = "pre-commit"
+actionlint.pkg-path = "actionlint"
+shellcheck.pkg-path = "shellcheck"
+lychee.pkg-path = "lychee"
+
+[vars]
+ASTRO_TELEMETRY_DISABLED = "1"
+PUPPETEER_SKIP_DOWNLOAD = "1"
+
+[hook]
+on-activate = '''
+  cd "$FLOX_ENV_PROJECT"
+  [ -f bun.lock ] && bun install --frozen-lockfile >/dev/null
+  if [ -d .git ] && [ -z "${CI:-}" ] && [ ! -f .git/hooks/pre-push ]; then
+    pre-commit install --install-hooks -t pre-commit -t pre-push >/dev/null
+  fi
+'''
+
+[profile]
+common = '''
+  echo "smeltery/website: bun run dev | bun run verify | flox services start"
+'''
+
+[services]
+dev.command = "bun run dev --host"
+
+[options]
+systems = ["aarch64-darwin", "x86_64-darwin", "aarch64-linux", "x86_64-linux"]

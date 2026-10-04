@@ -1,0 +1,8 @@
+{
+  "default_lines": 250,
+  "files": {},
+  "default_files": 10,
+  "directories": {
+    ".": { "limit": 14, "reason": "tool configs must live at the repo root" }
+  }
+}
