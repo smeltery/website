@@ -1,0 +1,209 @@
+---
+import { command, github, nav } from "../data/site";
+---
+
+<header class="header" data-nav>
+  <div class="bar wrap">
+    <a class="brand" href="/" aria-label="Smeltery Labs home">
+      <img src="/mark.svg" alt="" width="32" height="32" />
+      <span>Smeltery Labs</span>
+    </a>
+    <nav class="links" aria-label="Primary">
+      {nav.map((item) => (
+        <a href={item.href}>{item.label}</a>
+      ))}
+      <span class="rule" aria-hidden="true"></span>
+      <a class="muted" href={github}>
+        GitHub
+      </a>
+      <button class="btn btn-cmd cta" data-copy={command}>
+        {command}
+      </button>
+    </nav>
+    <button class="toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <div class="menu wrap" id="menu">
+    <ul>
+      {[...nav, { label: "GitHub", href: github }].map((item) => (
+        <li>
+          <a href={item.href} class:list={{ muted: item.href === github }}>
+            {item.label}
+            <span aria-hidden="true">→</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+    <div class="menu-foot">
+      <button class="btn btn-cmd" data-copy={command}>
+        {command}
+      </button>
+      <p>90+ open projects</p>
+    </div>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector<HTMLElement>("[data-nav]")!;
+  const toggle = header.querySelector<HTMLButtonElement>(".toggle")!;
+  const setOpen = (open: boolean) => {
+    header.toggleAttribute("data-open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    document.body.style.overflow = open ? "hidden" : "";
+  };
+  toggle.addEventListener("click", () => setOpen(!header.hasAttribute("data-open")));
+  header
+    .querySelectorAll(".menu a")
+    .forEach((link) => link.addEventListener("click", () => setOpen(false)));
+</script>
+
+<style>
+  .header {
+    border-bottom: 1px solid #eeeeee;
+  }
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 20px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font: 800 17px/22px var(--font-display);
+    letter-spacing: -0.03em;
+  }
+  .links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .links a {
+    padding: 8px 14px;
+    font: 500 15px/18px var(--font-body);
+    transition: background var(--ease);
+  }
+  .links a:hover {
+    background: var(--color-primary);
+    font-weight: 600;
+  }
+  .muted {
+    color: var(--color-neutral-500);
+  }
+  .rule {
+    width: 1px;
+    height: 20px;
+    margin-inline: 8px;
+    background: #dddddd;
+  }
+  .cta {
+    margin-left: 4px;
+    padding: 10px 16px;
+    font-size: 13px;
+    line-height: 16px;
+  }
+  .toggle,
+  .menu {
+    display: none;
+  }
+
+  @media (max-width: 1023px) {
+    .bar {
+      padding-block: 12px 16px;
+    }
+    .brand {
+      gap: 10px;
+      font-size: 15px;
+      line-height: 18px;
+    }
+    .brand img {
+      width: 28px;
+      height: 28px;
+    }
+    .links {
+      display: none;
+    }
+    .toggle {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 32px;
+      height: 32px;
+      padding: 4px;
+    }
+    .toggle span {
+      width: 24px;
+      height: 2px;
+      background: var(--color-neutral-900);
+      transition: transform var(--ease);
+    }
+    .toggle span:last-child {
+      width: 16px;
+    }
+    [data-open] {
+      position: fixed;
+      inset: 0;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      background: var(--color-neutral-50);
+      border: 0;
+    }
+    [data-open] .bar {
+      border-bottom: 1px solid #eeeeee;
+    }
+    [data-open] .toggle span:first-child {
+      transform: translateY(7px) rotate(45deg);
+    }
+    [data-open] .toggle span:nth-child(2) {
+      transform: rotate(-45deg);
+    }
+    [data-open] .toggle span:last-child {
+      opacity: 0;
+    }
+    [data-open] .menu {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-block: 28px 40px;
+    }
+    .menu li a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-block: 22px;
+      border-bottom: 1px solid #eeeeee;
+      font: 800 28px/34px var(--font-display);
+      letter-spacing: -0.03em;
+      transition:
+        background var(--ease),
+        padding var(--ease);
+    }
+    .menu li a:hover {
+      padding-inline: 12px;
+      background: var(--color-primary);
+    }
+    .menu li a span {
+      font: 700 20px/24px var(--font-display);
+    }
+    .menu-foot {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-align: center;
+      color: var(--color-neutral-500);
+      font: 12px/16px var(--font-mono);
+    }
+    .menu-foot .btn {
+      padding: 16px 20px;
+      font-size: 14px;
+    }
+  }
+</style>

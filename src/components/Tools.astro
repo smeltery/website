@@ -1,0 +1,184 @@
+---
+import { github, tools } from "../data/site";
+import SectionHead from "./SectionHead.astro";
+---
+
+<section class="tools wrap" id="tools">
+  <SectionHead
+    eyebrow="Featured tools"
+    title="Built for the jobs you actually have."
+    lede="Each tool solves one sharp problem. No platform lock-in. No dark patterns."
+    art={{ src: "/3d/anvil.webp", size: 160, mobileSize: 96, top: 36 }}
+  />
+  <ul class="list">
+    {tools.map((tool) => (
+      <li>
+        <a class="row" href={`${github}/${tool.name}`}>
+          {tool.icon && <img class="icon" src={tool.icon} alt="" width="48" height="48" />}
+          <span class="name">
+            <span class="tool">{tool.name}</span>
+            <span class="cat">{tool.category}</span>
+          </span>
+          <span class:list={["blurb", { indent: tool.icon }]}>
+            <span class="desk-only">{tool.blurb}</span>
+            <span class="mobile-only">{tool.short}</span>
+          </span>
+          <span class="plat">{tool.platform}</span>
+          <span class="arrow" aria-hidden="true">
+            →
+          </span>
+        </a>
+      </li>
+    ))}
+  </ul>
+  <div class="more">
+    <p>Showing {tools.length} of 90+ open projects</p>
+    <a href={github}>
+      View all tools <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</section>
+
+<style>
+  .tools {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    padding-block: 96px;
+  }
+  .list {
+    border-top: 2px solid var(--color-neutral-900);
+  }
+  li:not(:last-child) {
+    border-bottom: 1px solid #dddddd;
+  }
+  li:last-child {
+    border-bottom: 2px solid var(--color-neutral-900);
+  }
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 0;
+    transition:
+      background var(--ease),
+      padding var(--ease);
+  }
+  .row:hover {
+    padding-inline: 16px;
+    background: var(--color-primary);
+    box-shadow:
+      inset 0 2px var(--color-neutral-900),
+      inset 0 -1px var(--color-neutral-900);
+  }
+  .icon {
+    flex-shrink: 0;
+  }
+  .name {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: 6px;
+    width: 160px;
+  }
+  .tool {
+    font: 600 18px/22px var(--font-mono);
+  }
+  .cat {
+    color: var(--color-secondary);
+    font: 500 13px/16px var(--font-body);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .blurb {
+    flex: 1;
+    font-size: 17px;
+    line-height: 140%;
+  }
+  .plat {
+    flex-shrink: 0;
+    width: 80px;
+    color: var(--color-neutral-500);
+    font: 13px/16px var(--font-mono);
+    text-align: right;
+  }
+  .row:hover .plat {
+    color: var(--color-neutral-900);
+  }
+  .arrow {
+    font: 700 18px/22px var(--font-display);
+    transition: font-size var(--ease);
+  }
+  .row:hover .arrow {
+    font-size: 22px;
+  }
+  .more {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 8px;
+    color: var(--color-neutral-500);
+    font-size: 15px;
+    line-height: 18px;
+  }
+  .more a {
+    color: var(--color-neutral-900);
+    font: 700 15px/18px var(--font-display);
+  }
+  .more a:hover {
+    text-decoration: underline 2px var(--color-primary);
+    text-underline-offset: 4px;
+  }
+
+  @media (max-width: 1023px) {
+    .tools {
+      gap: 28px;
+      padding-block: 48px;
+    }
+    .row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      grid-template-areas: "icon name arrow" "blurb blurb blurb";
+      align-items: center;
+      gap: 8px 0;
+      padding-block: 20px;
+    }
+    .icon {
+      grid-area: icon;
+      width: 36px;
+      height: 36px;
+      margin-right: 14px;
+    }
+    .name {
+      grid-area: name;
+      width: auto;
+    }
+    .tool {
+      font-size: 16px;
+      line-height: 20px;
+    }
+    .cat,
+    .plat {
+      display: none;
+    }
+    .blurb {
+      grid-area: blurb;
+      font-size: 14px;
+    }
+    .indent {
+      padding-left: 50px;
+    }
+    .arrow {
+      grid-area: arrow;
+      font-size: 16px;
+      line-height: 20px;
+    }
+    .more {
+      padding-top: 16px;
+      font: 12px/16px var(--font-mono);
+    }
+    .more a {
+      font: 600 14px/18px var(--font-body);
+    }
+  }
+</style>

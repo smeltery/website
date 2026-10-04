@@ -1,0 +1,6 @@
+dist/
+.astro/
+.flox/
+bun.lock
+public/
+*.md

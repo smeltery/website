@@ -1,0 +1,115 @@
+---
+import { github } from "../data/site";
+import Terminal from "./Terminal.astro";
+---
+
+<section class="hero wrap">
+  <div class="copy">
+    <div class="intro">
+      <p class="eyebrow">Open source developer tools</p>
+      <h1 class="display">Developer tools that cut the friction out of building.</h1>
+    </div>
+    <p class="lede">
+      AI coding agents, machine setup, and everyday CLIs. Less time wrestling your stack. More time
+      shipping.
+    </p>
+    <div class="actions">
+      <a class="btn btn-primary see" href="#tools">
+        See the tools
+      </a>
+      <a class="btn btn-outline forge" href={github}>
+        Browse the forge
+      </a>
+    </div>
+  </div>
+  <div class="demo">
+    <Terminal />
+  </div>
+</section>
+
+<style>
+  .hero {
+    display: flex;
+    gap: 56px;
+    min-height: 760px;
+    padding-bottom: 40px;
+  }
+  .copy {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+  }
+  .intro {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  h1 {
+    font-size: 64px;
+    letter-spacing: -0.045em;
+    line-height: 102%;
+  }
+  .lede {
+    max-width: 520px;
+    font-size: 20px;
+  }
+  .actions {
+    display: flex;
+    gap: 14px;
+  }
+  .see {
+    padding: 16px 28px;
+  }
+  .forge {
+    padding: 14px 22px;
+    font: 500 14px/18px var(--font-mono);
+  }
+  .demo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 560px;
+  }
+
+  @media (max-width: 1023px) {
+    .hero {
+      flex-direction: column;
+      gap: 28px;
+      min-height: 0;
+      padding-block: 32px 36px;
+    }
+    .copy {
+      gap: 24px;
+    }
+    .intro {
+      gap: 14px;
+    }
+    h1 {
+      font-size: 34px;
+      letter-spacing: -0.04em;
+      line-height: 105%;
+    }
+    .lede {
+      margin-top: -10px;
+      font-size: 16px;
+    }
+    .actions {
+      flex-direction: column;
+      gap: 10px;
+    }
+    .see {
+      padding: 14px 20px;
+      font-size: 15px;
+      line-height: 18px;
+    }
+    .forge {
+      padding: 12px 20px;
+    }
+    .demo {
+      width: 100%;
+    }
+  }
+</style>

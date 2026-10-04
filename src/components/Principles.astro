@@ -1,0 +1,94 @@
+---
+import { principles } from "../data/site";
+import SectionHead from "./SectionHead.astro";
+---
+
+<section class="band" id="principles">
+  <div class="inner wrap">
+    <SectionHead
+      eyebrow="Principles"
+      title="How we decide what ships."
+      art={{ src: "/3d/hammer.webp", size: 120, mobileSize: 88, top: 6 }}
+    />
+    <ol>
+      {principles.map((item, index) => (
+        <li>
+          <p class="num">
+            {String(index + 1).padStart(2, "0")}
+            <span class="mobile-only"> · {item.title}</span>
+          </p>
+          <h3>{item.title}</h3>
+          <p>{item.text}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<style>
+  .band {
+    background: var(--color-neutral-100);
+  }
+  .inner {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    padding-block: 96px;
+  }
+  ol {
+    display: flex;
+    padding: 0;
+    list-style: none;
+    border-top: 2px solid var(--color-neutral-900);
+  }
+  li {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 16px;
+    padding: 36px 32px;
+  }
+  li:first-child {
+    padding-left: 0;
+  }
+  li:last-child {
+    padding-right: 0;
+  }
+  li:not(:last-child) {
+    border-right: 1px solid #cccccc;
+  }
+  .num {
+    color: var(--color-accent);
+    font: 600 13px/16px var(--font-mono);
+  }
+  h3 {
+    font: 800 24px/30px var(--font-display);
+    letter-spacing: -0.03em;
+  }
+
+  @media (max-width: 1023px) {
+    .inner {
+      gap: 28px;
+      padding-block: 48px;
+    }
+    ol {
+      flex-direction: column;
+    }
+    li {
+      gap: 8px;
+      padding: 20px 0;
+      font-size: 15px;
+      line-height: 145%;
+    }
+    li:not(:last-child) {
+      border-right: 0;
+      border-bottom: 1px solid #cccccc;
+    }
+    .num {
+      font-size: 12px;
+    }
+    h3 {
+      display: none;
+    }
+  }
+</style>

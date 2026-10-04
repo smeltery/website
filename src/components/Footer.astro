@@ -1,0 +1,198 @@
+---
+import { footer } from "../data/site";
+
+const only = (value?: "desktop" | "mobile") =>
+  value === "desktop" ? "desk-only" : value === "mobile" ? "mobile-only" : undefined;
+---
+
+<footer class="footer">
+  <div class="top wrap">
+    <div class="about">
+      <a class="brand" href="/">
+        <img src="/mark.svg" alt="" width="28" height="28" loading="lazy" />
+        Smeltery Labs
+      </a>
+      <p>
+        A collective dedicated to the craft of software engineering.
+        <span class="desk-only">Making the world better through software.</span>
+      </p>
+    </div>
+    <nav class="cols" aria-label="Footer">
+      {footer.map((col) => (
+        <div class:list={["col", only(col.only)]}>
+          <p class="title">{col.title}</p>
+          <ul>
+            {col.links.map((link) => (
+              <li class={only(link.only)}>
+                <a href={link.href}>{link.label}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </nav>
+  </div>
+  <div class="bottom wrap">
+    <p>
+      © 2026 Smeltery Labs<span class="desk-only">. Built in the open.</span>
+    </p>
+    <div class="status">
+      <a class="desk-only" href="https://github.com/smeltery">
+        github.com/smeltery
+      </a>
+      <span class="hot">
+        <i aria-hidden="true"></i>forge hot
+      </span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--color-neutral-900);
+    color: var(--color-neutral-50);
+  }
+  .top {
+    display: flex;
+    gap: 64px;
+    padding-block: 72px 56px;
+  }
+  .about {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: 20px;
+    width: 320px;
+    color: #aaaaaa;
+    font-size: 15px;
+    line-height: 155%;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--color-neutral-50);
+    font: 800 16px/20px var(--font-display);
+    letter-spacing: -0.02em;
+  }
+  .cols {
+    display: flex;
+    flex: 1;
+    justify-content: end;
+    gap: 48px;
+  }
+  .col {
+    width: 140px;
+  }
+  .col,
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .title {
+    color: var(--color-neutral-500);
+    font: 600 12px/16px var(--font-body);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  ul a {
+    display: block;
+    font: 500 15px/18px var(--font-body);
+    transition: color var(--ease);
+  }
+  ul a:hover,
+  .status a:hover {
+    color: var(--color-primary);
+  }
+  .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 24px;
+    border-top: 1px solid #222222;
+    color: var(--color-neutral-500);
+    font-size: 13px;
+    line-height: 16px;
+  }
+  .status {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    color: #888888;
+    font: 12px/16px var(--font-mono);
+  }
+  .hot {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #aaaaaa;
+  }
+  .hot i {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--color-primary);
+  }
+
+  @media (max-width: 1023px) {
+    .top {
+      flex-direction: column;
+      gap: 36px;
+      padding-block: 48px 0;
+    }
+    .about {
+      gap: 14px;
+      width: auto;
+      font-size: 14px;
+      line-height: 150%;
+    }
+    .brand {
+      gap: 10px;
+      font-size: 15px;
+      line-height: 18px;
+    }
+    .brand img {
+      width: 24px;
+      height: 24px;
+    }
+    .cols {
+      justify-content: start;
+      gap: 40px;
+    }
+    .col {
+      flex: 1;
+      width: auto;
+    }
+    .col,
+    ul {
+      gap: 12px;
+    }
+    .title {
+      font-size: 11px;
+      line-height: 14px;
+    }
+    ul a {
+      font-size: 14px;
+    }
+    .bottom {
+      flex-direction: column;
+      align-items: start;
+      gap: 10px;
+      margin-top: 36px;
+      padding-block: 20px 28px;
+      border-top: 0;
+      background: linear-gradient(#222222, #222222) var(--gutter) 0 / calc(100% - 2 * var(--gutter))
+        1px no-repeat;
+      font-size: 12px;
+    }
+    .status {
+      font-size: 11px;
+      line-height: 14px;
+    }
+    .hot i {
+      width: 6px;
+      height: 6px;
+    }
+  }
+</style>

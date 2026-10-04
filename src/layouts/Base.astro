@@ -1,0 +1,54 @@
+---
+import "@fontsource-variable/syne";
+import "@fontsource-variable/dm-sans";
+import "@fontsource/ibm-plex-mono/400.css";
+import "@fontsource/ibm-plex-mono/500.css";
+import "@fontsource/ibm-plex-mono/600.css";
+import "../styles/global.css";
+
+const title = "Smeltery Labs";
+const description =
+  "Developer tools that cut the friction out of building. 90+ open projects for AI agents, machine setup, and everyday CLIs.";
+const og = new URL("/og.png", Astro.site).href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="canonical" href={Astro.site} />
+    <link rel="icon" type="image/svg+xml" href="/mark.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={Astro.site} />
+    <meta property="og:image" content={og} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={og} />
+  </head>
+  <body>
+    <slot />
+    <script>
+      for (const button of document.querySelectorAll<HTMLButtonElement>("[data-copy]")) {
+        const label = button.textContent;
+        button.addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText(button.dataset.copy ?? "");
+            button.textContent = "copied";
+          } catch (error) {
+            console.error("clipboard write failed", error);
+            button.textContent = "copy blocked";
+          }
+          setTimeout(() => (button.textContent = label), 1200);
+        });
+      }
+    </script>
+  </body>
+</html>
