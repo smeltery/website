@@ -53,6 +53,13 @@ const og = new URL("/og.png", Astro.site).href;
         url: Astro.site?.href,
         description,
         logo: new URL("/mark.svg", Astro.site).href,
+        address: { "@type": "PostalAddress", addressCountry: "US" },
+        contactPoint: {
+          "@type": "ContactPoint",
+          contactType: "technical support",
+          url: "https://github.com/smeltery/website/issues",
+          availableLanguage: "English",
+        },
         sameAs: ["https://github.com/smeltery", "https://smeltery-skills.vercel.app"],
       }).replace(/</g, "\\u003c")}
     />
