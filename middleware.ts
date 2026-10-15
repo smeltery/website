@@ -6,6 +6,11 @@ import type { APIContext } from "astro";
 export const config = { runtime: "edge" };
 
 export default async function middleware(request: Request) {
+  const url = new URL(request.url);
+  if (url.hostname === "smeltery-website.vercel.app") {
+    url.hostname = "smeltery-labs.vercel.app";
+    return Response.redirect(url, 308);
+  }
   const accept = request.headers.get("accept") ?? "";
   const markdown = accept.split(",").some((part) => {
     const [type, ...parameters] = part.trim().split(";");
@@ -14,13 +19,12 @@ export default async function middleware(request: Request) {
     );
   });
   if (!markdown || !["GET", "HEAD"].includes(request.method)) return next();
-  const url = new URL(request.url);
   const path = url.pathname.replace(/\/$/, "") || "/";
   let body: string;
   let status = 200;
   if (path === "/") {
     const response = await directory({
-      site: new URL("https://smeltery-website.vercel.app"),
+      site: new URL("https://smeltery-labs.vercel.app"),
     } as APIContext);
     body = await response.text();
   } else if (path === "/brand") {

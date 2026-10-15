@@ -1,0 +1,236 @@
+<section class="learn-git wrap" aria-labelledby="learn-git-title">
+  <div class="copy">
+    <p class="eyebrow">A little confidence for your next commit</p>
+    <h2 id="learn-git-title">
+      Good ideas deserve
+      <br />
+      <em>a little history.</em>
+    </h2>
+    <p class="description">
+      Get comfortable with Git and GitHub, one concept at a time. A simple starting point for saving
+      your work, trying an idea, and building together.
+    </p>
+    <div class="actions">
+      <a
+        class="btn btn-primary"
+        href="https://learn-git-five.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Start learning Git <span aria-hidden="true">↗</span>
+      </a>
+      <span class="note">Free. Open source. Beginner friendly.</span>
+    </div>
+  </div>
+  <div class="history" aria-hidden="true">
+    <div class="window-bar">
+      <span class="window-dots">
+        <i></i>
+        <i></i>
+        <i></i>
+      </span>
+      <span>a little progress, saved.</span>
+    </div>
+    <div class="graph">
+      <svg viewBox="0 0 96 240" fill="none">
+        <path class="main-line" d="M24 20V220" />
+        <path class="branch-line" d="M24 60C24 90 72 72 72 105V145C72 178 24 160 24 190" />
+        <g class="main-nodes">
+          <circle cx="24" cy="20" r="7" />
+          <circle cx="24" cy="60" r="7" />
+          <circle cx="24" cy="190" r="7" />
+          <circle cx="24" cy="220" r="7" />
+        </g>
+        <g class="branch-nodes">
+          <circle cx="72" cy="105" r="7" />
+          <circle cx="72" cy="145" r="7" />
+        </g>
+      </svg>
+      <div class="commits">
+        <div>
+          <code>main</code>
+          <p>Start with an idea.</p>
+        </div>
+        <div class="branch">
+          <code>a-little-experiment</code>
+          <p>Give it room to grow.</p>
+        </div>
+        <div>
+          <span class="merged">↳ merged</span>
+          <p>Bring the good bits together.</p>
+        </div>
+      </div>
+    </div>
+    <div class="window-footer">
+      <span class="status-dot"></span>Every small step is worth keeping.
+    </div>
+  </div>
+</section>
+<style>
+  .learn-git {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 56px;
+    margin-top: 40px;
+    padding: 40px;
+    border: 1px solid #e8dfd0;
+    border-radius: 24px;
+    background: #f0eade;
+  }
+  .eyebrow {
+    color: #74634e;
+  }
+  h2 {
+    font-size: clamp(30px, 3.4vw, 42px);
+  }
+  h2 em {
+    color: #896144;
+  }
+  .description {
+    max-width: 460px;
+    margin-top: 20px;
+    color: #6c655b;
+    font-size: 14px;
+    line-height: 1.75;
+  }
+  .actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    margin-top: 28px;
+  }
+  .note {
+    color: #6c655b;
+    font-size: 12px;
+  }
+  .history {
+    background: #fffdf8;
+    border: 1px solid #e4dacb;
+    border-radius: 16px;
+    transform: rotate(-2deg);
+    box-shadow: 0 16px 32px #614c3010;
+  }
+  .window-bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    border-bottom: 1px solid #eae4da;
+    color: #776e61;
+    font: 10px var(--font-mono);
+  }
+  .window-dots {
+    display: flex;
+    gap: 5px;
+  }
+  .window-dots i {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #d6c5ac;
+  }
+  .graph {
+    display: flex;
+    gap: 12px;
+    padding: 24px 20px;
+  }
+  svg {
+    flex: 0 0 80px;
+    width: 80px;
+    height: 220px;
+  }
+  .main-line {
+    stroke: #91a184;
+    stroke-width: 2;
+  }
+  .branch-line {
+    stroke: #c18b63;
+    stroke-width: 2;
+  }
+  .main-nodes {
+    fill: #f5f7ef;
+    stroke: #718760;
+    stroke-width: 2;
+  }
+  .branch-nodes {
+    fill: #faf0e6;
+    stroke: #b37e55;
+    stroke-width: 2;
+  }
+  .commits {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8px 0;
+    min-width: 0;
+  }
+  code,
+  .merged {
+    display: inline-block;
+    font: 10px var(--font-mono);
+    color: var(--green);
+    background: #edf1e5;
+    border-radius: 5px;
+    padding: 4px 8px;
+  }
+  .branch code {
+    color: #8c5c37;
+    background: #f4e8d9;
+  }
+  .commits p {
+    font-size: 12px;
+    color: #6c655b;
+    margin-top: 8px;
+  }
+  .window-footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-top: 1px solid #eae4da;
+    padding: 14px 20px;
+    font-size: 11px;
+    color: #776e61;
+  }
+  .status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #82906a;
+  }
+  @media (max-width: 900px) {
+    .learn-git {
+      gap: 32px;
+    }
+    .graph {
+      padding-inline: 12px;
+      gap: 4px;
+    }
+    svg {
+      flex-basis: 64px;
+      width: 64px;
+    }
+  }
+  @media (max-width: 760px) {
+    .learn-git {
+      grid-template-columns: 1fr;
+      padding: 26px;
+    }
+    .history {
+      max-width: 460px;
+      width: 100%;
+      justify-self: center;
+      transform: rotate(-1deg);
+    }
+  }
+  @media (max-width: 380px) {
+    .learn-git {
+      padding: 20px;
+    }
+    .window-bar {
+      gap: 10px;
+      padding-inline: 14px;
+    }
+  }
+</style>

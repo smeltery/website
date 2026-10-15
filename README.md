@@ -32,7 +32,7 @@ $ bun run verify     # everything CI checks
 
 ## Deployment and agent access
 
-Production: <https://smeltery-website.vercel.app>
+Production: <https://smeltery-labs.vercel.app>
 
 Vercel builds the static site with Bun using `vercel.json`. Set `SITE_URL` when
 hosting under a different canonical domain. The site provides `robots.txt`,

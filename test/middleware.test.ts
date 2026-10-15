@@ -1,9 +1,18 @@
 import { describe, expect, test } from "bun:test";
 import middleware from "../middleware";
 const request = (path: string, accept = "text/markdown", method = "GET") =>
-  new Request(`https://smeltery-website.vercel.app${path}`, { headers: { accept }, method });
+  new Request(`https://smeltery-labs.vercel.app${path}`, { headers: { accept }, method });
 
 describe("Markdown negotiation", () => {
+  test("redirects the old domain while preserving paths and queries", async () => {
+    const response = await middleware(
+      new Request("https://smeltery-website.vercel.app/brand/?source=link"),
+    );
+    expect(response.status).toBe(308);
+    expect(response.headers.get("location")).toBe(
+      "https://smeltery-labs.vercel.app/brand/?source=link",
+    );
+  });
   test("returns useful homepage content with cache-safe headers", async () => {
     const response = await middleware(request("/"));
     expect(response.status).toBe(200);
