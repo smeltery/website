@@ -1,0 +1,152 @@
+<section class="showrunner wrap" aria-labelledby="showrunner-title">
+  <div class="copy">
+    <div class="identity">
+      <img src="/repositories/showrunner.svg" width="44" height="44" alt="" loading="lazy" />
+      <p class="eyebrow">Meet Showrunner</p>
+    </div>
+    <h2 id="showrunner-title">
+      You made the change.
+      <br />
+      <em>Now show the story.</em>
+    </h2>
+    <p class="description">
+      Give your next pull request a walkthrough worth watching. Turn a working flow into a
+      replayable Playwright demo, with a visible cursor, paced typing, and captions that keep
+      everyone following along.
+    </p>
+    <div class="actions">
+      <a
+        class="btn btn-primary"
+        href="https://showrunner-orpin-phi.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Explore Showrunner <span aria-hidden="true">↗</span>
+      </a>
+      <a
+        class="text-link"
+        href="https://showrunner-orpin-phi.vercel.app/docs/getting-started/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Make your first demo <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+    <p class="fine-print">Built on Playwright. Ready for your agent’s next walkthrough.</p>
+  </div>
+  <a
+    class="preview"
+    href="https://showrunner-orpin-phi.vercel.app/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Explore Showrunner’s demo workflow"
+  >
+    <img
+      src="/spotlight/showrunner.webp"
+      width="1200"
+      height="630"
+      alt="Showrunner — make your pull request worth watching"
+      loading="lazy"
+    />
+    <span class="preview-caption">
+      <span>From a code change to a clear walkthrough</span>
+      <span aria-hidden="true">↗</span>
+    </span>
+  </a>
+</section>
+<style>
+  .showrunner {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 48px;
+    align-items: center;
+    margin-top: 40px;
+    padding: 40px;
+    border: 1px solid #e3dccc;
+    border-radius: 24px;
+    background: #f0ede4;
+  }
+  .identity {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .identity .eyebrow {
+    margin: 0;
+  }
+  h2 {
+    font-size: clamp(28px, 3.2vw, 40px);
+  }
+  h2 em {
+    color: #78623e;
+  }
+  .description {
+    margin-top: 20px;
+    max-width: 470px;
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--muted);
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px 24px;
+    margin-top: 28px;
+  }
+  .text-link {
+    font-size: 13px;
+  }
+  .fine-print {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 18px;
+  }
+  .preview {
+    display: block;
+    background: #fffdf7;
+    border: 1px solid #e1d8c5;
+    border-radius: 16px;
+    overflow: hidden;
+    transform: rotate(1.5deg);
+    box-shadow: 0 16px 32px #604e3010;
+    transition:
+      transform var(--ease),
+      box-shadow var(--ease);
+  }
+  .preview:hover {
+    transform: rotate(0);
+    box-shadow: 0 20px 36px #604e301a;
+  }
+  .preview img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .preview-caption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    border-top: 1px solid #e3dccc;
+    font-size: 12px;
+    color: #78623e;
+  }
+  @media (max-width: 760px) {
+    .showrunner {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      padding: 26px;
+    }
+    .preview {
+      transform: rotate(1deg);
+    }
+  }
+  @media (max-width: 380px) {
+    .showrunner {
+      padding: 20px;
+    }
+  }
+</style>

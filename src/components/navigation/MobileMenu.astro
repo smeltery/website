@@ -79,13 +79,6 @@ const home = Astro.url.pathname === "/" ? "" : "/";
         </a>
       ))}
     </nav>
-    <a
-      class="menu-brand-link"
-      href="/brand/"
-      aria-current={Astro.url.pathname.startsWith("/brand") ? "page" : undefined}
-    >
-      Brand & assets <span aria-hidden="true">→</span>
-    </a>
   </div>
   <div class="menu-footer">
     <a href={github} style="gap: 8px">

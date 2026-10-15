@@ -1,0 +1,218 @@
+.information {
+  padding-block: 36px 72px;
+  .page-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 220px;
+    align-items: center;
+    gap: 48px;
+  }
+  h1 {
+    font-size: clamp(36px, 4.8vw, 62px);
+    line-height: 1.1;
+  }
+  h1 span,
+  h1 em {
+    display: block;
+  }
+  h1 em {
+    color: var(--green);
+  }
+  .introduction {
+    max-width: 620px;
+    margin-top: 24px;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.7;
+  }
+  .intro-art {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1;
+    background: #eceee5;
+    border-radius: 50%;
+  }
+  .intro-art img {
+    width: 160px;
+    height: 160px;
+  }
+  .highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 32px;
+    padding: 24px 0;
+    margin-top: 36px;
+    border-block: 1px solid var(--line);
+  }
+  .highlights li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .highlights span {
+    color: var(--green);
+  }
+  .page-body {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 64px;
+    margin-top: 48px;
+  }
+  .contents {
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    position: sticky;
+    top: 116px;
+    gap: 12px;
+  }
+  .contents p {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+    color: var(--muted);
+  }
+  .contents a {
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .contents a:hover {
+    color: var(--green);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .sections {
+    min-width: 0;
+  }
+  .info-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0 0 32px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid var(--line);
+    scroll-margin-top: 120px;
+  }
+  .info-section:last-child {
+    margin-bottom: 0;
+    border: 0;
+  }
+  .section-number {
+    font: 12px var(--font-mono);
+    color: var(--green);
+    margin-top: 6px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  .info-section > div {
+    flex: 1;
+    min-width: 0;
+  }
+  .info-section p {
+    max-width: 70ch;
+    margin-top: 14px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--muted);
+  }
+  .text-link {
+    display: inline-block;
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--green);
+  }
+  .contact .info-section {
+    padding: 26px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: #ffffff80;
+    margin-bottom: 16px;
+  }
+  .page-closing {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 32px;
+    padding: 32px;
+    border: 1px solid #dfe4d6;
+    border-radius: 20px;
+    background: #eceee5;
+  }
+  .page-closing p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--muted);
+    margin-top: 12px;
+    max-width: 620px;
+  }
+  .page-closing .btn {
+    flex-shrink: 0;
+    font-size: 13px;
+  }
+}
+@media (max-width: 900px) {
+  .information {
+    .page-body {
+      grid-template-columns: 180px minmax(0, 1fr);
+      gap: 32px;
+    }
+    .page-closing {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+    }
+  }
+}
+@media (max-width: 640px) {
+  .information {
+    padding-block: 24px 48px;
+    .page-intro {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .intro-art {
+      display: none;
+    }
+    .introduction {
+      font-size: 16px;
+      margin-top: 20px;
+    }
+    .highlights {
+      gap: 12px;
+      flex-direction: column;
+      margin-top: 24px;
+      padding-block: 20px;
+    }
+    .page-body {
+      grid-template-columns: 1fr;
+      gap: 28px;
+      margin-top: 28px;
+    }
+    .contents {
+      position: static;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--line);
+    }
+    .info-section {
+      gap: 12px;
+    }
+    .contact .info-section {
+      padding: 20px 16px;
+    }
+    h2 {
+      font-size: 22px;
+    }
+    .page-closing {
+      padding: 24px;
+      margin-top: 8px;
+    }
+    .page-closing .btn {
+      white-space: normal;
+      text-align: center;
+    }
+  }
+}

@@ -120,6 +120,11 @@
     "source": "https://raw.githubusercontent.com/smeltery/rig/1805fe28d7dd60966a3e0abf4bc78ec9afedeeca/website/assets/mark.svg"
   },
   {
+    "repository": "showrunner",
+    "asset": "/repositories/showrunner.svg",
+    "source": "https://raw.githubusercontent.com/smeltery/showrunner/db5c01328b9aed736e746fbf9154b0e879ebbd62/site/public/assets/mark.svg"
+  },
+  {
     "repository": "skills",
     "asset": "/mark.svg",
     "source": "https://raw.githubusercontent.com/smeltery/skills/d8e900488628c86271983200f2e7bbbeab43b59d/apps/site/public/mark.svg"

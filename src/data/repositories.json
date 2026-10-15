@@ -375,6 +375,11 @@
     "href": "https://github.com/smeltery/shared-ai-config"
   },
   {
+    "name": "showrunner",
+    "description": "Replayable pull request demos with Playwright: visible cursors, paced typing, captions, and chapter cards.",
+    "href": "https://github.com/smeltery/showrunner"
+  },
+  {
     "name": "skills",
     "description": "Portable agent skills from smeltery. Install with: npx skills@latest add smeltery/skills",
     "href": "https://github.com/smeltery/skills"

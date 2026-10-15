@@ -2,7 +2,6 @@
 import { github, nav } from "../data/site";
 import SearchTrigger from "./navigation/SearchTrigger.astro";
 import GitHubIcon from "./navigation/GitHubIcon.astro";
-const links = [...nav, { label: "Brand & assets", href: "/brand/" }];
 const hrefFor = (href: string) =>
   href.startsWith("#") && Astro.url.pathname !== "/" ? `/${href}` : href;
 ---
@@ -18,7 +17,7 @@ const hrefFor = (href: string) =>
     </span>
   </a>
   <nav class="desktop-nav" aria-label="Primary">
-    {links.map((item) => (
+    {nav.map((item) => (
       <a
         href={hrefFor(item.href)}
         aria-current={

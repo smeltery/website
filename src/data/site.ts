@@ -47,6 +47,15 @@ export interface Tool {
 
 export const tools: Tool[] = [
   {
+    name: "showrunner",
+    icon: "/repositories/showrunner.svg",
+    category: "Agents",
+    platform: "Playwright",
+    blurb:
+      "Turn application changes into replayable pull request demos with captions, paced typing, and a visible cursor.",
+    short: "Replayable pull request demos with Playwright.",
+  },
+  {
     name: "ember",
     icon: "/tools/ember.svg",
     category: "Agents",

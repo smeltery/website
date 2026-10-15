@@ -32,7 +32,7 @@ export default async function middleware(request: Request) {
       "# Smeltery brand assets\n\nDownload the [Smeltery mark](/mark.svg), [favicon](/favicon.png), and [social preview](/og.png). See the [brand page](/brand/) for colors, typography, and usage.\n";
   } else if (Object.hasOwn(information, path.slice(1))) {
     const page = information[path.slice(1) as keyof typeof information];
-    body = `# ${page.title}\n\n${page.paragraphs.join("\n\n")}\n\n[Website support](https://github.com/smeltery/website/issues)\n`;
+    body = `# ${page.title}\n\n${page.introduction}\n\n${page.sections.map((section) => `## ${section.title}\n\n${section.text}${section.link ? `\n\n[${section.link.label}](${section.link.href})` : ""}`).join("\n\n")}\n\n## ${page.closing.title}\n\n${page.closing.text}\n\n[${page.closing.label}](${page.closing.href})\n\n[Website support](https://github.com/smeltery/website/issues)\n`;
   } else if (/\.[a-z0-9]+$/i.test(path)) {
     return next();
   } else {
