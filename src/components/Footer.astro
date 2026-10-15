@@ -1,122 +1,172 @@
 ---
-import { footer } from "../data/site";
+import { footer, github } from "../data/site";
+import GitHubIcon from "./navigation/GitHubIcon.astro";
 ---
 
-<footer class="footer wrap">
-  <div class="top">
-    <div class="about">
-      <a class="brand" href="/">
-        <img src="/mark.svg" alt="" width="28" height="28" loading="lazy" />
-        smeltery labs
-      </a>
-      <p>
-        A small collective dedicated
-        <br />
-        to the craft of software.
-      </p>
-    </div>
-    <nav class="cols" aria-label="Footer">
-      {footer.map((col) => (
-        <div class="col">
-          <p class="title">{col.title}</p>
-          <ul>
-            {col.links
-              .filter((link) => link.only !== "mobile")
-              .map((link) => (
-                <li>
-                  <a href={link.href}>{link.label}</a>
-                </li>
-              ))}
-          </ul>
-        </div>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/" aria-label="Smeltery Labs home">
+          <img src="/mark.svg" alt="" width="32" height="32" loading="lazy" />
+          <span>
+            smeltery<span class="brand-sub"> / labs</span>
+          </span>
+        </a>
+        <p>
+          Less friction.
+          <br />
+          More making.
+        </p>
+        <span>Thoughtful developer tools for the work you love.</span>
+      </div>
+      {footer.map((column) => (
+        <nav aria-label={`Footer ${column.title.toLowerCase()}`}>
+          <h2>{column.title}</h2>
+          {column.links.map((link) => (
+            <a
+              class:list={{ "icon-link": link.label === "GitHub repository" }}
+              href={
+                link.href.startsWith("#") && Astro.url.pathname !== "/"
+                  ? `/${link.href}`
+                  : link.href
+              }
+            >
+              {link.label === "GitHub repository" && <GitHubIcon />}
+              {link.label}
+            </a>
+          ))}
+        </nav>
       ))}
-    </nav>
-  </div>
-  <div class="bottom">
-    <p>© 2026 Smeltery Labs. Built in the open.</p>
-    <span class="hot">
-      <i aria-hidden="true"></i>forge hot
-    </span>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Smeltery Labs</span>
+      <a href={`${github}/website/blob/main/LICENSE`}>PolyForm Shield license</a>
+      <span class="footer-note">Built for the way you work.</span>
+      <a class="back-to-top" href="#top">
+        <span class="back-to-top-label">Back to top ↑</span>
+      </a>
+    </div>
   </div>
 </footer>
 <style>
   .footer {
-    padding-top: 70px;
+    margin-top: 70px;
+    background: var(--paper);
+    color: var(--ink);
+    border-top: 1px solid var(--line);
+    padding: 57px 0 24px;
   }
-  .top {
-    display: flex;
-    justify-content: space-between;
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1.1fr;
     gap: 40px;
-    padding-bottom: 48px;
   }
   .brand {
     display: flex;
-    gap: 9px;
     align-items: center;
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: -0.05em;
+    gap: 10px;
+    font-size: 19px;
+    font-weight: 650;
+    letter-spacing: -0.045em;
+    white-space: nowrap;
   }
-  .about p {
-    margin-top: 16px;
-    font-size: 12px;
+  .brand-sub {
     color: var(--muted);
+    font-weight: 400;
   }
-  .cols {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 28px;
+  .footer-brand > p {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 26px;
+    line-height: 1.3;
+    letter-spacing: -0.025em;
+    margin: 22px 0 14px;
   }
-  .title {
-    font-size: 12px;
-    font-weight: 600;
-    margin-bottom: 16px;
+  .footer-brand > span {
+    color: var(--muted);
+    font-size: 10px;
   }
-  ul {
-    display: grid;
-    gap: 9px;
+  nav h2 {
+    font: 10px var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 7px 0 24px;
+  }
+  nav a {
+    display: block;
+    width: fit-content;
+    color: var(--muted);
+    margin-bottom: 15px;
     font-size: 11px;
-    color: var(--muted);
   }
-  ul a:hover {
+  nav .icon-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    margin-top: 48px;
+    padding-top: 23px;
+    font-size: 9px;
+  }
+  .footer-note {
+    margin-left: auto;
+  }
+  a {
+    cursor: pointer;
+  }
+  nav a:hover,
+  .footer-bottom a:not(.back-to-top):hover,
+  .back-to-top:hover .back-to-top-label {
     text-decoration: underline;
     text-underline-offset: 4px;
   }
-  .bottom {
-    border-top: 1px solid var(--line);
-    padding-block: 23px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 11px;
-    color: var(--muted);
+  .back-to-top:hover {
+    color: var(--green);
   }
-  .hot {
-    display: flex;
-    gap: 7px;
+  .back-to-top {
+    display: inline-flex;
     align-items: center;
+    gap: 6px;
+    min-height: 44px;
   }
-  .hot i {
-    width: 6px;
-    height: 6px;
-    background: #84946d;
-    border-radius: 50%;
-  }
-  @media (max-width: 760px) {
-    .top {
-      flex-direction: column;
-    }
-    .cols {
-      gap: 20px;
-    }
-  }
-  @media (max-width: 480px) {
-    .cols {
-      grid-template-columns: 1fr 1fr;
+  @media (max-width: 1100px) {
+    .footer-grid {
       gap: 28px;
     }
-    .bottom {
-      font-size: 10px;
-      gap: 12px;
+  }
+  @media (max-width: 780px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 32px 20px;
+    }
+    .footer-brand {
+      grid-column: 1 / -1;
+    }
+    .footer-brand > p {
+      font-size: 28px;
+    }
+    nav a {
+      font-size: 12px;
+    }
+    nav h2 {
+      margin-bottom: 20px;
+    }
+    .footer-bottom {
+      flex-wrap: wrap;
+      gap: 15px 22px;
+      margin-top: 30px;
+    }
+    .footer-note {
+      display: none;
+    }
+    .back-to-top {
+      margin-left: auto;
     }
   }
 </style>

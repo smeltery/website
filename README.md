@@ -9,7 +9,6 @@
 [![Dev env: Flox](https://img.shields.io/badge/dev%20env-flox-7c3aed.svg)](https://flox.dev)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](.pre-commit-config.yaml)
 [![Docs: Mermaid](https://img.shields.io/badge/docs-mermaid%20validated-ff3670?logo=mermaid&logoColor=white)](docs/README.md)
-[![JS shipped: ~1 KB](https://img.shields.io/badge/client%20JS-~1%20KB-0a0a0a.svg)](docs/architecture/overview.md)
 
 The Smeltery Labs landing page: a static Astro site inspired by the
 quiet, playful design of `smeltery/convrt` and `smeltery/loft`. It ships zero framework JavaScript, self-hosts
@@ -30,6 +29,16 @@ $ bun run verify     # everything CI checks
 - `src/data/site.ts` holds every piece of copy, link, and tool listing.
 - `public/` holds the mark, tool icons, optimized 3D renders, and the OG image.
 - `scripts/` holds the LOC budget and Mermaid checks.
+
+## Deployment and agent access
+
+Production: <https://smeltery-website.vercel.app>
+
+Vercel builds the static site with Bun using `vercel.json`. Set `SITE_URL` when
+hosting under a different canonical domain. The site provides `robots.txt`,
+`sitemap.xml`, `llms.txt`, and `llms-full.txt` for discovery and a custom 404 page.
+The project directory is generated from the reviewed repository snapshot and logo
+registry. Refresh repository metadata with `bun run sync:repositories`.
 
 ## Documentation
 

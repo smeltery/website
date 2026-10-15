@@ -1,0 +1,457 @@
+[
+  {
+    "name": "adamou-financial-consulting",
+    "description": "Financial coaching website, client intake, and brand resources for Adamou Financial Consulting.",
+    "href": "https://github.com/smeltery/adamou-financial-consulting"
+  },
+  {
+    "name": "agnt",
+    "description": "Control coding-agent CLIs from your iPhone \u2014 Codex, Claude Code, opencode, and any other agent you plug in. agnt is a local-first, open-source bridge + iOS app that keeps the agent runtime on your Mac and lets your phone connect through a paired secure session.",
+    "href": "https://github.com/smeltery/agnt"
+  },
+  {
+    "name": "airlock",
+    "description": "Local, disposable browser isolation. Right-click any link and open it in a short-lived, containerized browser session.",
+    "href": "https://github.com/smeltery/airlock"
+  },
+  {
+    "name": "alacritty",
+    "description": "Sensible defaults for alacritty.",
+    "href": "https://github.com/smeltery/alacritty"
+  },
+  {
+    "name": "alder-house",
+    "description": "An editorial photography website for a fictional studio, built with Astro, Sanity, Bun, and Flox.",
+    "href": "https://github.com/smeltery/alder-house"
+  },
+  {
+    "name": "alpine-xfce4",
+    "description": "Simple and minimal Alpine Docker Image providing XFCE4 with html5 noVNC connection.",
+    "href": "https://github.com/smeltery/alpine-xfce4"
+  },
+  {
+    "name": "appscan-sast-travis-integration",
+    "description": "This repository contains a sample project that demonstrates how to integrate HCL AppScan SAST with Travis CI.",
+    "href": "https://github.com/smeltery/appscan-sast-travis-integration"
+  },
+  {
+    "name": "aptscout",
+    "description": "Scrape apartment availability across multiple properties, store results in SQLite, and browse with a filterable web UI. Track prices, catch deals, never miss a unit.",
+    "href": "https://github.com/smeltery/aptscout"
+  },
+  {
+    "name": "ares",
+    "description": "A modular VPS hardening runner for fresh Linux servers.",
+    "href": "https://github.com/smeltery/ares"
+  },
+  {
+    "name": "argparse",
+    "description": "Java argument parsing done right.",
+    "href": "https://github.com/smeltery/argparse"
+  },
+  {
+    "name": "avahiswitch",
+    "description": "Raspberry Pi service to turn on avahi-daemon if /boot/avahi is present.",
+    "href": "https://github.com/smeltery/avahiswitch"
+  },
+  {
+    "name": "awsw",
+    "description": "A lightweight CLI for seamlessly switching between AWS SSO accounts and EKS cluster contexts. Switch account \u2192 switch kubectl context \u2192 use 'k9s'/ 'kubectl' against the right cluster immediately.",
+    "href": "https://github.com/smeltery/awsw"
+  },
+  {
+    "name": "bash",
+    "description": "Sensible defaults for bash.",
+    "href": "https://github.com/smeltery/bash"
+  },
+  {
+    "name": "beam",
+    "description": "A clean-room webhook notification service and CLI for scripted alerts, interactive approvals, and Live Activity-style progress state.",
+    "href": "https://github.com/smeltery/beam"
+  },
+  {
+    "name": "boilerplate-technical-documentation",
+    "description": "This repository contains the boilerplate technical documentation for your teams projects which are published and hosted using GitHub Pages.",
+    "href": "https://github.com/smeltery/boilerplate-technical-documentation"
+  },
+  {
+    "name": "bold-performance",
+    "description": "Personal training and performance coaching with Brock Jones in Scottsdale, Arizona.",
+    "href": "https://github.com/smeltery/bold-performance"
+  },
+  {
+    "name": "bureau",
+    "description": "Friction going from 1 Claude Code to 4+? Bureau is a browser-based office where each AI agent sits at a desk. See who's working, who's sleeping, and who needs you \u2014 at a glance.",
+    "href": "https://github.com/smeltery/bureau"
+  },
+  {
+    "name": "claude",
+    "description": "Personal Claude Code configuration including agents, skills, commands, and settings.",
+    "href": "https://github.com/smeltery/claude"
+  },
+  {
+    "name": "cli-template",
+    "description": "Multi-language CLI template: scaffold Go, Python, or Rust CLIs with shared resources",
+    "href": "https://github.com/smeltery/cli-template"
+  },
+  {
+    "name": "clion-gateway",
+    "description": "A portal to CLion using JetBrains Gateway and Docker.",
+    "href": "https://github.com/smeltery/clion-gateway"
+  },
+  {
+    "name": "cloud-tools",
+    "description": "An AWS cloud-based service that provides users with a platform to convert or compress files.",
+    "href": "https://github.com/smeltery/cloud-tools"
+  },
+  {
+    "name": "codex",
+    "description": "Sensible defaults for Codex CLI",
+    "href": "https://github.com/smeltery/codex"
+  },
+  {
+    "name": "configsync",
+    "description": "A command-line tool for managing macOS application settings and configurations with centralized storage and syncing across multiple Mac systems.",
+    "href": "https://github.com/smeltery/configsync"
+  },
+  {
+    "name": "context",
+    "description": "A second dock for your Mac \u2014 apps, links, clipboard history, and live widgets.",
+    "href": "https://github.com/smeltery/context"
+  },
+  {
+    "name": "contrast-security-sast-travis-integration",
+    "description": "Contrast Security provides a Static Application Security Testing (SAST) solution that can be integrated into your existing CI/CD pipeline for local, fast security scanning.",
+    "href": "https://github.com/smeltery/contrast-security-sast-travis-integration"
+  },
+  {
+    "name": "convrt",
+    "description": "Convert any file with a right-click. Native engines, fully on your machine.",
+    "href": "https://github.com/smeltery/convrt"
+  },
+  {
+    "name": "create-tagged-releases",
+    "description": "A script creates a tagged GitHub release for all repositories listed in config.yml.",
+    "href": "https://github.com/smeltery/create-tagged-releases"
+  },
+  {
+    "name": "cursor",
+    "description": "Cursor agent configuration for set-me-up",
+    "href": "https://github.com/smeltery/cursor"
+  },
+  {
+    "name": "distill",
+    "description": "Compact technical books, documentation, and reference material into agent-optimized markdown. Outputs structured context repos that plug directly into Warp, Claude Code, or any agent that reads markdown.",
+    "href": "https://github.com/smeltery/distill"
+  },
+  {
+    "name": "dotagent",
+    "description": "A tiny code-editing agent in Rust \u2014 a minimal, hackable CLI that talks to OpenAI and can read, list, and edit files in your working directory.",
+    "href": "https://github.com/smeltery/dotagent"
+  },
+  {
+    "name": "eden",
+    "description": "Python orchestrator for AI coding agents in sandboxed worktrees.",
+    "href": "https://github.com/smeltery/eden"
+  },
+  {
+    "name": "ember",
+    "description": "Keep your Mac awake while AI coding agents work \u2014 lid shut.",
+    "href": "https://github.com/smeltery/ember"
+  },
+  {
+    "name": "fish",
+    "description": "Sensible defaults for fish.",
+    "href": "https://github.com/smeltery/fish"
+  },
+  {
+    "name": "fugue",
+    "description": "Incognito mode for AI coding agents \u2014 Claude, Codex, Gemini.",
+    "href": "https://github.com/smeltery/fugue"
+  },
+  {
+    "name": "gh-dash",
+    "description": "Personal gh-dash configuration with Gruvbox Dark theme and companion setup for gh-enhance and diffnav.",
+    "href": "https://github.com/smeltery/gh-dash"
+  },
+  {
+    "name": "gh-identity",
+    "description": "A 'gh' CLI extension that provides seamless multi-account management, automatic context-based account switching, and per-directory identity binding.",
+    "href": "https://github.com/smeltery/gh-identity"
+  },
+  {
+    "name": "ghw",
+    "description": "A command-line tool that acts as a wrapper around the official GitHub CLI (gh). It provides enhanced functionality for cloning repositories similar to GoLang while passing through all other commands to the official gh CLI.",
+    "href": "https://github.com/smeltery/ghw"
+  },
+  {
+    "name": "glimpse",
+    "description": "GitHub-style git diff viewer CLI \u2014 browser-based, syntax-highlighted split diffs for uncommitted changes, branches, commits, and ranges.",
+    "href": "https://github.com/smeltery/glimpse"
+  },
+  {
+    "name": "guardrails",
+    "description": "A modular, maintainable, customizable security compliant DevOps strategy for use with Travis CI.",
+    "href": "https://github.com/smeltery/guardrails"
+  },
+  {
+    "name": "harbor",
+    "description": "A quiet workspace for Mac app testing: Slipway and Porthole, together.",
+    "href": "https://github.com/smeltery/harbor"
+  },
+  {
+    "name": "hermes",
+    "description": "High-performance logging library for Java with excellent developer experience.",
+    "href": "https://github.com/smeltery/hermes"
+  },
+  {
+    "name": "homebrew-tap",
+    "description": "\ud83c\udf7b Homebrew tap for smeltery \ud83e\udde0",
+    "href": "https://github.com/smeltery/homebrew-tap"
+  },
+  {
+    "name": "image-signing-travis-example",
+    "description": "Demonstrate how to create and sign a docker image in Travis CI and push it into a container registry.",
+    "href": "https://github.com/smeltery/image-signing-travis-example"
+  },
+  {
+    "name": "io.github.smeltery",
+    "description": "Sonatype Central Portal namespace verification for io.github.smeltery",
+    "href": "https://github.com/smeltery/io.github.smeltery"
+  },
+  {
+    "name": "janus",
+    "description": "A federated authentication service that acts as a gateway between client applications and Keycloak, enriching JWTs with custom user data from a PostgreSQL database. It provides a unified authentication experience by combining Keycloak's identity management with application-specific user attributes.",
+    "href": "https://github.com/smeltery/janus"
+  },
+  {
+    "name": "jeabizdev.com",
+    "description": "The JEA BizDev Consulting Website is the front-facing website for JEA BizDev Consulting, a consulting firm that specializes in business development and strategic outreach for in- and -out licensing in the biotech industry.",
+    "href": "https://github.com/smeltery/jeabizdev.com"
+  },
+  {
+    "name": "loft",
+    "description": "More space for your Mac",
+    "href": "https://github.com/smeltery/loft"
+  },
+  {
+    "name": "lynx",
+    "description": "\ud83d\udcbe A shell script to bootstrap a Linux laptop (or Desktop) into a development machine.",
+    "href": "https://github.com/smeltery/lynx"
+  },
+  {
+    "name": "macos",
+    "description": "Opinionated MacOS configurations based on development needs.",
+    "href": "https://github.com/smeltery/macos"
+  },
+  {
+    "name": "mav",
+    "description": "zed + herdr + cmux = \ud83e\uddd9",
+    "href": "https://github.com/smeltery/mav"
+  },
+  {
+    "name": "nushell",
+    "description": "Sensible defaults for nushell.",
+    "href": "https://github.com/smeltery/nushell"
+  },
+  {
+    "name": "nvim",
+    "description": "My personal development environment for NeoVIM.",
+    "href": "https://github.com/smeltery/nvim"
+  },
+  {
+    "name": "opencode",
+    "description": "Personal OpenCode configuration including agents, commands, skills, and TUI settings.",
+    "href": "https://github.com/smeltery/opencode"
+  },
+  {
+    "name": "opencode-multi-team",
+    "description": "Standalone multi-team orchestration config for OpenCode",
+    "href": "https://github.com/smeltery/opencode-multi-team"
+  },
+  {
+    "name": "pi",
+    "description": "Sensible defaults for pi coding agent",
+    "href": "https://github.com/smeltery/pi"
+  },
+  {
+    "name": "porthole",
+    "description": "A native window into Mac test VMs: live screens, agent sessions and command timelines.",
+    "href": "https://github.com/smeltery/porthole"
+  },
+  {
+    "name": "prr",
+    "description": "Run AI-powered code reviews on GitHub pull requests. Outputs structured, human-readable markdown comments for easy copy-paste into GitHub.",
+    "href": "https://github.com/smeltery/prr"
+  },
+  {
+    "name": "pyreload-cli",
+    "description": "A modern, easy-to-use package to automatically restart Python applications when file changes are detected. Perfect for development workflows with full support for Docker, Vagrant, and mounted filesystems via polling mode.",
+    "href": "https://github.com/smeltery/pyreload-cli"
+  },
+  {
+    "name": "rig",
+    "description": "A minimalist coding agent harness and orchestrator.",
+    "href": "https://github.com/smeltery/rig"
+  },
+  {
+    "name": "set-me-up",
+    "description": "A comprehensive dotfiles and system configuration framework.",
+    "href": "https://github.com/smeltery/set-me-up"
+  },
+  {
+    "name": "set-me-up-arch-modules",
+    "description": "Generic Arch Linux package installation modules for the set-me-up dotfiles ecosystem",
+    "href": "https://github.com/smeltery/set-me-up-arch-modules"
+  },
+  {
+    "name": "set-me-up-blueprint",
+    "description": "A template to manage 'set-me-up' setups.",
+    "href": "https://github.com/smeltery/set-me-up-blueprint"
+  },
+  {
+    "name": "set-me-up-colorscheme-module",
+    "description": "Multi-OS colorscheme configuration with clear separation between operating systems while maintaining DRY principles.",
+    "href": "https://github.com/smeltery/set-me-up-colorscheme-module"
+  },
+  {
+    "name": "set-me-up-debian-modules",
+    "description": "This repository contains granular Debian/Linux modules for the set-me-up project.",
+    "href": "https://github.com/smeltery/set-me-up-debian-modules"
+  },
+  {
+    "name": "set-me-up-docs",
+    "description": "Documentation for set-me-up which aims to simplify the dull setup and maintenance of Mac OS development environments.",
+    "href": "https://github.com/smeltery/set-me-up-docs"
+  },
+  {
+    "name": "set-me-up-installer",
+    "description": "This is the binary used to install and configure 'set-me-up' on Mac and *debian* linux machines.",
+    "href": "https://github.com/smeltery/set-me-up-installer"
+  },
+  {
+    "name": "set-me-up-macos-modules",
+    "description": "This repository contains granular macOS/Homebrew modules for the set-me-up project.",
+    "href": "https://github.com/smeltery/set-me-up-macos-modules"
+  },
+  {
+    "name": "set-me-up-macports-module",
+    "description": "A MacOS module used with 'set-me-up' configurations whose goal is to install macports.",
+    "href": "https://github.com/smeltery/set-me-up-macports-module"
+  },
+  {
+    "name": "set-me-up-omarchy-modules",
+    "description": "Omarchy (Arch Linux + Hyprland) modules for the set-me-up dotfiles ecosystem",
+    "href": "https://github.com/smeltery/set-me-up-omarchy-modules"
+  },
+  {
+    "name": "set-me-up-preferences-module",
+    "description": "\u2699\ufe0f Multi-OS system preferences configuration with support for macOS, Arch Linux, and Debian.",
+    "href": "https://github.com/smeltery/set-me-up-preferences-module"
+  },
+  {
+    "name": "set-me-up-template-module",
+    "description": "A repository is designed to be used as a submodule to the set-me-up blueprint repository.",
+    "href": "https://github.com/smeltery/set-me-up-template-module"
+  },
+  {
+    "name": "set-me-up-tests",
+    "description": "Scenario-driven Docker tests for set-me-up provisioning.",
+    "href": "https://github.com/smeltery/set-me-up-tests"
+  },
+  {
+    "name": "set-me-up-universal-modules",
+    "description": "Universal modules for 'set-me-up' setups.",
+    "href": "https://github.com/smeltery/set-me-up-universal-modules"
+  },
+  {
+    "name": "set-me-up-xcode-module",
+    "description": "A MacOS module used with 'set-me-up' configurations whose goal is to install xcode.",
+    "href": "https://github.com/smeltery/set-me-up-xcode-module"
+  },
+  {
+    "name": "shared-ai-config",
+    "description": "Shared agent and skill definitions for OpenCode and Claude Code configurations.",
+    "href": "https://github.com/smeltery/shared-ai-config"
+  },
+  {
+    "name": "skills",
+    "description": "Portable agent skills from smeltery. Install with: npx skills@latest add smeltery/skills",
+    "href": "https://github.com/smeltery/skills"
+  },
+  {
+    "name": "slipway",
+    "description": "Headless Mac app testing for coding agents. Test your app, keep your screen.",
+    "href": "https://github.com/smeltery/slipway"
+  },
+  {
+    "name": "stow",
+    "description": "A script mimics the functionality of GNU Stow, allowing you to create symlinks to files and directories in a specified path.",
+    "href": "https://github.com/smeltery/stow"
+  },
+  {
+    "name": "television",
+    "description": "Personal Television (tv) configuration with curated cable channels for fast terminal fuzzy finding.",
+    "href": "https://github.com/smeltery/television"
+  },
+  {
+    "name": "thumbs",
+    "description": "Local Codex review \u2192 Claude fix loop: preflight your PR until the reviewer has nothing left to say \ud83d\udc4d\ud83c\udffc",
+    "href": "https://github.com/smeltery/thumbs"
+  },
+  {
+    "name": "tmux",
+    "description": "My personal configuration for tmux.",
+    "href": "https://github.com/smeltery/tmux"
+  },
+  {
+    "name": "travis-shared-config",
+    "description": "Travis v3 Shared Config is a powerful feature that allows you to create reusable configuration snippets for your Travis CI build processes. By utilizing shared configurations, you can simplify your .travis.yml files and ensure consistency across multiple projects.",
+    "href": "https://github.com/smeltery/travis-shared-config"
+  },
+  {
+    "name": "trellis",
+    "description": "Your coding agents, at home.",
+    "href": "https://github.com/smeltery/trellis"
+  },
+  {
+    "name": "trousseau",
+    "description": "A shared wedding budget that stays with you until the day arrives.",
+    "href": "https://github.com/smeltery/trousseau"
+  },
+  {
+    "name": "ubuntu-xfce4",
+    "description": "Simple and minimal Ubuntu Docker Image providing XFCE4 with html5 noVNC connection.",
+    "href": "https://github.com/smeltery/ubuntu-xfce4"
+  },
+  {
+    "name": "utilities",
+    "description": "Custom-made Bash functions & utilities.",
+    "href": "https://github.com/smeltery/utilities"
+  },
+  {
+    "name": "vnc-service",
+    "description": "Service file to start TightVNC or TigerVNC as a service in Kali-Linux.",
+    "href": "https://github.com/smeltery/vnc-service"
+  },
+  {
+    "name": "webgrab",
+    "description": "A Python CLI tool that captures all resources loaded by a webpage (like browser DevTools Sources tab) and saves them with the original directory structure.",
+    "href": "https://github.com/smeltery/webgrab"
+  },
+  {
+    "name": "yeet",
+    "description": "A TUI/CLI tool to completely remove macOS applications and all their related files \u2014 like AppCleaner, but in your terminal.",
+    "href": "https://github.com/smeltery/yeet"
+  },
+  {
+    "name": "zed",
+    "description": "Sensible defaults for Zed",
+    "href": "https://github.com/smeltery/zed"
+  },
+  {
+    "name": "zsh",
+    "description": "Sensible defaults for zsh (z shell).",
+    "href": "https://github.com/smeltery/zsh"
+  }
+]

@@ -1,8 +1,17 @@
 {
   "default_lines": 250,
-  "files": {},
+  "files": {
+    "src/data/repositories.json": 1000
+  },
   "default_files": 10,
   "directories": {
-    ".": { "limit": 14, "reason": "tool configs must live at the repo root" }
+    ".": {
+      "limit": 16,
+      "reason": "tool configs must live at the repo root"
+    },
+    "public/repositories": {
+      "limit": 40,
+      "reason": "Reviewed project logos for the public repository search index"
+    }
   }
 }

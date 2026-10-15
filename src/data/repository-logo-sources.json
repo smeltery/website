@@ -1,0 +1,147 @@
+[
+  {
+    "repository": "adamou-financial-consulting",
+    "asset": "/tools/adamou-financial-consulting.svg",
+    "source": "https://raw.githubusercontent.com/smeltery/adamou-financial-consulting/3e18cf75cc40d5030cbc35c9f3b5f3065aaa2921/apps/site/public/assets/afin-favicon.svg"
+  },
+  {
+    "repository": "agnt",
+    "asset": "/repositories/agnt.png",
+    "source": "https://raw.githubusercontent.com/smeltery/agnt/072532fc7d628b2df00b88c9ad0bb9975eef7228/AgntMobile/AgntMobile/Assets.xcassets/AppLogo.imageset/Agnt-iOS-Default-1024x1024@1x.png"
+  },
+  {
+    "repository": "airlock",
+    "asset": "/tools/airlock.svg",
+    "source": "https://raw.githubusercontent.com/smeltery/airlock/f6287231b597a4d1c86faff6699c502f2a55f0c7/site/public/favicon.svg"
+  },
+  {
+    "repository": "alder-house",
+    "asset": "/repositories/alder-house.svg",
+    "source": "https://raw.githubusercontent.com/smeltery/alder-house/225bc506d84cf158ce239b52c3c1d927b6f5406c/public/brand/mark.svg"
+  },
+  {
+    "repository": "aptscout",
+    "asset": "/repositories/aptscout.svg",
+    "source": "https://raw.githubusercontent.com/smeltery/aptscout/846f78de88aeaf827d44abb537a7550e5a32eab4/website/public/favicon.svg"
+  },
+  {
+    "repository": "bold-performance",
+    "asset": "/tools/bold-performance.svg",
+    "source": "https://raw.githubusercontent.com/smeltery/bold-performance/d1728811f072fc5b794822bf6fe36da8926480f5/public/assets/favicon.svg"
+  },
+  {
+    "repository": "bureau",
+    "asset": "/repositories/bureau.svg",
+    "source": "https://raw.githubusercontent.com/smeltery/bureau/5baad4b98011e160f14b8e92af48fe9d61009e92/website/public/favicon.svg"
+  },
+  {
+    "repository": "cloud-tools",
+    "asset": "/repositories/cloud-tools.ico",
+    "source": "https://raw.githubusercontent.com/smeltery/cloud-tools/1a8a0fb9e10b3d46bc2bc09f5b5e200f8fc84d1b/client/app/favicon.ico"
+  },
+  {
+    "repository": "configsync",
+    "asset": "/repositories/configsync.ico",
+    "source": "https://raw.githubusercontent.com/smeltery/configsync/a746d4fc0aa945fde5993ce8d1cbe3cd9f43dfb7/docs/favicon.ico"
+  },
+  {
+    "repository": "context",
+    "asset": "/tools/context.svg",
+    "source": "https://raw.githubusercontent.com/smeltery/context/4676f5eb98afdedd12705f377d1cb99d8021b717/apps/web/public/icon.svg"
+  },
+  {
+    "repository": "convrt",
+    "asset": "/repositories/convrt.svg",
+    "source": "https://raw.githubusercontent.com/smeltery/convrt/b66e8dd48f37517779739f34b0038705101a1a70/apps/web/public/logo.svg"
+  },
+  {
+    "repository": "distill",
+    "asset": "/repositories/distill.svg",
+    "source": "https://raw.githubusercontent.com/smeltery/distill/b3eedbf32df45da25115c4e7e3b2d20e8286fb77/website/public/favicon.svg"
+  },
+  {
+    "repository": "ember",
+    "asset": "/tools/ember.svg",
+    "source": "https://raw.githubusercontent.com/smeltery/ember/20fc1a0bdc38a698a5810afb3c0bc138b214217c/apps/web/public/logo.svg"
+  },
+  {
+    "repository": "fugue",
+    "asset": "/tools/fugue.svg",
+    "source": "https://raw.githubusercontent.com/smeltery/fugue/329dad3b7020df385e0ce29cb413d444394f2d3f/site/public/favicon.svg"
+  },
+  {
+    "repository": "glimpse",
+    "asset": "/repositories/glimpse.svg",
+    "source": "https://raw.githubusercontent.com/smeltery/glimpse/7e537e8218524c6947ec2bd0d8e10b4ef72871a2/website/public/favicon.svg"
+  },
+  {
+    "repository": "harbor",
+    "asset": "/repositories/harbor.svg",
+    "source": "https://raw.githubusercontent.com/smeltery/harbor/9099fb534accf095b2b423f64651948091e005c9/assets/logo.svg"
+  },
+  {
+    "repository": "hermes",
+    "asset": "/repositories/hermes.svg",
+    "source": "https://raw.githubusercontent.com/smeltery/hermes/38222def46dacb679dc5f0277dfd71aa083e6b61/website/public/favicon.svg"
+  },
+  {
+    "repository": "jeabizdev.com",
+    "asset": "/repositories/jeabizdev.com.svg",
+    "source": "https://raw.githubusercontent.com/smeltery/jeabizdev.com/e0e0a5beb03de31d21cd05ea45fc7e533b64c86f/public/brand/mark.svg"
+  },
+  {
+    "repository": "loft",
+    "asset": "/repositories/loft.svg",
+    "source": "https://raw.githubusercontent.com/smeltery/loft/5ebf0fed96cc6d04f45678dec3437ba6644b9a3b/apps/web/public/brand/logo.svg"
+  },
+  {
+    "repository": "mav",
+    "asset": "/repositories/mav.svg",
+    "source": "https://raw.githubusercontent.com/smeltery/mav/43785a6d76d7a9ecd790c4797e82ea713eeed23e/assets/images/mav_logo.svg"
+  },
+  {
+    "repository": "porthole",
+    "asset": "/repositories/porthole.svg",
+    "source": "https://raw.githubusercontent.com/smeltery/porthole/db29c8332874abff650af109fb9e7920fe9b6f1d/assets/logo.svg"
+  },
+  {
+    "repository": "prr",
+    "asset": "/repositories/prr.svg",
+    "source": "https://raw.githubusercontent.com/smeltery/prr/ebdae9ca8fc997f5933b987bc126159c38d14d0d/website/public/favicon.svg"
+  },
+  {
+    "repository": "pyreload-cli",
+    "asset": "/repositories/pyreload-cli.svg",
+    "source": "https://raw.githubusercontent.com/smeltery/pyreload-cli/67b5d059a2e0cbf76238cc65eb34713da8010476/website/public/favicon.svg"
+  },
+  {
+    "repository": "rig",
+    "asset": "/repositories/rig.svg",
+    "source": "https://raw.githubusercontent.com/smeltery/rig/1805fe28d7dd60966a3e0abf4bc78ec9afedeeca/website/assets/mark.svg"
+  },
+  {
+    "repository": "skills",
+    "asset": "/mark.svg",
+    "source": "https://raw.githubusercontent.com/smeltery/skills/d8e900488628c86271983200f2e7bbbeab43b59d/apps/site/public/mark.svg"
+  },
+  {
+    "repository": "slipway",
+    "asset": "/repositories/slipway.svg",
+    "source": "https://raw.githubusercontent.com/smeltery/slipway/098ea644e2a19336421071eac9f7db189d4523c1/assets/logo.svg"
+  },
+  {
+    "repository": "trellis",
+    "asset": "/repositories/trellis.png",
+    "source": "https://raw.githubusercontent.com/smeltery/trellis/44516c4ef514b2ee1b18795603df385c1583da3d/fork/branding/prod/trellis-web-apple-touch-180.png"
+  },
+  {
+    "repository": "trousseau",
+    "asset": "/repositories/trousseau.svg",
+    "source": "https://github.com/smeltery/trousseau/blob/201b164f6ca167e2b87f64bf63271d0779393ab8/src/components/TrousseauLogo.tsx"
+  },
+  {
+    "repository": "yeet",
+    "asset": "/repositories/yeet.svg",
+    "source": "https://github.com/smeltery/yeet/blob/86bd88237d6d87bf583f03f7a8d8265a0a2761fa/assets/og-image.svg"
+  }
+]

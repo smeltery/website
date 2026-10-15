@@ -1,0 +1,168 @@
+---
+import { repositoryLogos } from "../../data/repository-logos";
+import repositories from "../../data/repositories.json";
+import { allRepositoriesUrl, tools, featuredSkills, skillsUrl } from "../../data/site";
+import "../../styles/search.css";
+interface SearchEntry {
+  name: string;
+  description: string;
+  href: string;
+  category: string;
+  icon?: string | undefined;
+}
+const entries: SearchEntry[] = [
+  {
+    name: "Explore tools",
+    description: "Small developer tools for everyday workflows.",
+    href: "/#tools",
+    category: "Pages",
+  },
+  {
+    name: "Brand & assets",
+    description: "Logos, colors, typography, and downloads.",
+    href: "/brand/",
+    category: "Pages",
+  },
+  {
+    name: "Our principles",
+    description: "Simplicity, efficiency, privacy, and community.",
+    href: "/#principles",
+    category: "Pages",
+  },
+  {
+    name: "Explore all skills",
+    description: "Find a workflow in the Smeltery skill library.",
+    href: `${skillsUrl}/#library`,
+    category: "Skills",
+  },
+  {
+    name: "Getting started with skills",
+    description: "Install your first skill and put it to work.",
+    href: `${skillsUrl}/guides/installation/`,
+    category: "Skills",
+  },
+  ...repositories
+    .filter((repository) => Boolean(repositoryLogos[repository.name]))
+    .sort((a, b) => {
+      const featuredIndex = (name: string) => {
+        const index = tools.findIndex((tool) => tool.name === name);
+        return index < 0 ? tools.length : index;
+      };
+      return featuredIndex(a.name) - featuredIndex(b.name) || a.name.localeCompare(b.name);
+    })
+    .map((repository) => ({
+      ...repository,
+      icon:
+        repositoryLogos[repository.name] ??
+        tools.find((tool) => tool.name === repository.name)?.icon,
+      category: "Tools",
+    })),
+  ...featuredSkills.map((skill) => ({
+    name: skill.name,
+    description: `${skill.task}. ${skill.description}`,
+    href: `${skillsUrl}/skills/${skill.name}/`,
+    category: "Skills",
+  })),
+];
+---
+
+<dialog id="site-search" class="site-search" aria-labelledby="search-title">
+  <header>
+    <div>
+      <p class="eyebrow">A little less looking</p>
+      <h2 id="search-title">Find your next step.</h2>
+    </div>
+    <button type="button" data-close-search aria-label="Close search">
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        aria-hidden="true"
+      >
+        <path d="m6 6 12 12M18 6 6 18" />
+      </svg>
+    </button>
+  </header>
+  <div class="search-field">
+    <label for="search-input">Search tools, skills, and pages</label>
+    <input
+      id="search-input"
+      type="search"
+      placeholder="Search tools, skills, or pages…"
+      autocomplete="off"
+      spellcheck="false"
+      autofocus
+      aria-controls="search-results"
+    />
+  </div>
+  <div class="search-filters" role="group" aria-label="Search within">
+    {["Everything", "Tools", "Skills", "Pages"].map((category) => (
+      <button type="button" data-search-filter={category} aria-pressed={category === "Everything"}>
+        {category}
+      </button>
+    ))}
+  </div>
+  <nav id="search-results" aria-label="Search results">
+    {entries.map((entry) => (
+      <a
+        href={entry.href}
+        data-search-entry
+        data-category={entry.category}
+        data-search-text={`${entry.name} ${entry.description} ${entry.category}`.toLowerCase()}
+      >
+        {entry.category === "Tools" &&
+          (entry.icon ? (
+            <img class="result-icon" src={entry.icon} width="36" height="36" alt="" />
+          ) : (
+            <span class="result-icon result-placeholder" aria-hidden="true">
+              {entry.name === "set-me-up" ? "~/" : "⌘"}
+            </span>
+          ))}
+        <span class="result-copy">
+          <strong>{entry.name}</strong>
+          <small>{entry.description}</small>
+        </span>
+        <span class="result-category">
+          {entry.category}{" "}
+          <span aria-hidden="true">{entry.href.startsWith("https:") ? "↗" : "→"}</span>
+        </span>
+      </a>
+    ))}
+    <p data-search-empty hidden>
+      No matches yet. Try “debug”, “Mac”, or “brand”.
+    </p>
+  </nav>
+  <footer>
+    <p role="status" data-search-status>
+      Tools, skills, and pages, one search away.
+    </p>
+    <div class="keyboard-hints" aria-label="Keyboard shortcuts">
+      <span>
+        <kbd>↑</kbd>
+        <kbd>↓</kbd> Move
+      </span>
+      <span>
+        <kbd>↵</kbd> Open
+      </span>
+      <span>
+        <kbd>esc</kbd> Close
+      </span>
+    </div>
+    <a
+      class="all-repositories"
+      aria-label="Browse all repositories on GitHub"
+      href={allRepositoriesUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      All repositories <span aria-hidden="true">↗</span>
+    </a>
+  </footer>
+</dialog>
+<script>
+  import "../../scripts/search";
+</script>

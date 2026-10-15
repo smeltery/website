@@ -12,8 +12,8 @@ describe("built page", () => {
       "Less friction.",
       'id="tools"',
       'id="principles"',
-      "Say hello from your terminal.",
-      "forge hot",
+      "Explore Smeltery on GitHub",
+      'id="skills"',
     ]) {
       expect(html).toContain(marker);
     }
@@ -25,6 +25,20 @@ describe("built page", () => {
     }
   });
 
+  test("provides crawlable discovery and recovery pages", async () => {
+    const robots = await Bun.file("dist/robots.txt").text();
+    expect(robots).toContain("Allow: /");
+    expect(robots).toContain("/sitemap.xml");
+    const sitemap = await Bun.file("dist/sitemap.xml").text();
+    expect(sitemap).toContain("/brand/");
+    const directory = await Bun.file("dist/llms-full.txt").text();
+    expect(directory).toContain("https://github.com/smeltery/harbor");
+    expect(directory).not.toContain("github.com/smeltery/.github");
+    expect(await Bun.file("dist/404.html").text()).toContain("Back to Smeltery");
+    expect(html).toContain('name="is-agentic-site-type" content="business"');
+    expect(html).toContain('type="application/ld+json"');
+  });
+
   test("ships absolute social metadata", () => {
     const og = html.match(/property="og:image" content="([^"]+)"/)?.[1];
     expect(og).toMatch(/^https:\/\/.+\/og\.png$/);
@@ -32,7 +46,9 @@ describe("built page", () => {
   });
 
   test("references only local assets that exist", () => {
-    const local = [...attrs("src"), ...attrs("href")].filter((url) => url.startsWith("/"));
+    const local = [...attrs("src"), ...attrs("href")]
+      .filter((url) => url.startsWith("/"))
+      .map((url) => url.split("#")[0]!);
     expect(local.length).toBeGreaterThan(0);
     for (const url of local) {
       expect(existsSync(`dist${url === "/" ? "/index.html" : url}`)).toBe(true);

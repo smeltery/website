@@ -1,0 +1,214 @@
+---
+import { repositoryLogos } from "../../data/repository-logos";
+const companions = [
+  {
+    name: "slipway",
+    title: "Slipway",
+    role: "Run the tests",
+    description:
+      "Headless Mac app testing for coding agents. Test your app while keeping your screen free.",
+  },
+  {
+    name: "porthole",
+    title: "Porthole",
+    role: "See what’s happening",
+    description: "Follow live screens, agent sessions, and command timelines in your Mac test VMs.",
+  },
+];
+---
+
+<section class="harbor wrap" aria-labelledby="harbor-title">
+  <div class="overview">
+    <div class="copy">
+      <div class="identity">
+        <img src={repositoryLogos.harbor} width="44" height="44" alt="" loading="lazy" />
+        <p class="eyebrow">The Harbor project</p>
+      </div>
+      <h2 id="harbor-title">
+        A quiet place
+        <br />
+        to <em>test your next idea.</em>
+      </h2>
+      <p class="description">
+        One workspace for Mac app testing. Harbor brings Slipway and Porthole together, so your
+        agent can work and you can follow along.
+      </p>
+      <a
+        class="btn harbor-button"
+        href="https://github.com/smeltery/harbor"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Explore Harbor <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+    <img
+      class="preview"
+      src="/spotlight/harbor.png"
+      width="1200"
+      height="630"
+      alt="Harbor project preview"
+      loading="lazy"
+    />
+  </div>
+  <div class="companions">
+    <p class="family-label">Two tools. One workspace.</p>
+    <div class="tool-grid">
+      {companions.map((tool) => (
+        <a
+          class="companion"
+          href={`https://github.com/smeltery/${tool.name}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={repositoryLogos[tool.name]} width="40" height="40" alt="" loading="lazy" />
+          <div>
+            <p class="role">{tool.role}</p>
+            <h3>{tool.title}</h3>
+            <p class="tool-description">{tool.description}</p>
+            <span class="destination">
+              Explore {tool.title} <span aria-hidden="true">↗</span>
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+<style>
+  .harbor {
+    padding: 40px;
+    margin-bottom: 64px;
+    border: 1px solid #34494c;
+    border-radius: 24px;
+    background: #233638;
+    color: #f7f8f3;
+  }
+  .overview {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 48px;
+  }
+  .identity {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .identity img {
+    object-fit: contain;
+  }
+  .identity .eyebrow {
+    margin: 0;
+    color: #c2d3ce;
+  }
+  h2 {
+    font-size: clamp(28px, 3.2vw, 40px);
+  }
+  h2 em {
+    color: #c6ddce;
+  }
+  .description {
+    margin: 20px 0 24px;
+    color: #cedad6;
+    font-size: 14px;
+    max-width: 440px;
+  }
+  .harbor-button {
+    background: #eef3e9;
+    color: #233638;
+  }
+  .harbor-button:hover {
+    background: #fff;
+  }
+  .preview {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    transform: rotate(1.5deg);
+    box-shadow: 0 16px 32px #0003;
+  }
+  .companions {
+    margin-top: 36px;
+    padding-top: 24px;
+    border-top: 1px solid #ffffff26;
+  }
+  .family-label {
+    color: #c2d3ce;
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+  .tool-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .companion {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 24px;
+    border: 1px solid #ffffff26;
+    border-radius: 16px;
+    background: #ffffff08;
+    transition:
+      background var(--ease),
+      border-color var(--ease);
+  }
+  .companion:hover {
+    background: #ffffff12;
+    border-color: #ffffff50;
+  }
+  .companion > img {
+    flex-shrink: 0;
+    object-fit: contain;
+  }
+  .role {
+    color: #c2d3ce;
+    font-size: 11px;
+    margin-bottom: 4px;
+  }
+  h3 {
+    font-size: 21px;
+  }
+  .tool-description {
+    color: #cedad6;
+    font-size: 13px;
+    margin-top: 10px;
+  }
+  .destination {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #eef3e9;
+  }
+  @media (max-width: 760px) {
+    .harbor {
+      padding: 26px;
+      margin-bottom: 40px;
+    }
+    .overview {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .tool-grid {
+      grid-template-columns: 1fr;
+    }
+    .companion {
+      padding: 20px;
+    }
+  }
+  @media (max-width: 380px) {
+    .harbor {
+      padding: 20px;
+    }
+    .companion {
+      gap: 12px;
+      padding: 16px;
+    }
+  }
+</style>

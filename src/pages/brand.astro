@@ -1,0 +1,188 @@
+---
+import "../styles/brand.css";
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+const colors = [
+  { name: "Paper", hex: "#f7f7f2", use: "A warm canvas for the work ahead." },
+  { name: "Charcoal", hex: "#292b25", use: "Clear words and confident actions." },
+  { name: "Sage", hex: "#526447", use: "A quiet accent for a little direction." },
+  { name: "Soft sage", hex: "#eceee5", use: "A welcoming home for related ideas." },
+  { name: "White", hex: "#ffffff", use: "A fresh surface for useful things." },
+];
+const assets = [
+  { name: "Vector mark", detail: "SVG · original colors · scalable", file: "/mark.svg" },
+  { name: "Social preview", detail: "PNG · 1200 × 630", file: "/og.png" },
+  { name: "Browser icon", detail: "PNG · 31 × 32", file: "/favicon.png" },
+];
+---
+
+<Base
+  title="Brand & assets · Smeltery Labs"
+  description="The Smeltery Labs brand toolkit: our original mark, social artwork, colors, typography, and downloadable assets."
+>
+  <Nav />
+  <main id="main" class="brand-page wrap">
+    <header class="intro">
+      <p class="eyebrow">Smeltery Labs / Brand & assets</p>
+      <h1>
+        A small collective.
+        <br />
+        <em>A little character.</em>
+      </h1>
+      <p class="lede">
+        The pieces that make our tools feel at home. For your next README, project mention, or
+        introduction to Smeltery.
+      </p>
+      <a class="btn btn-primary" href="#downloads">
+        Get the assets <span aria-hidden="true">↓</span>
+      </a>
+    </header>
+
+    <section aria-labelledby="mark-title">
+      <p class="eyebrow">01 / The mark</p>
+      <h2 id="mark-title">
+        Small pixels. <em>Room to grow.</em>
+      </h2>
+      <p class="lede">
+        Our pixel plant adds a little life to practical software. Keep its original colors and
+        proportions, with plenty of space around it.
+      </p>
+      <div class="marks">
+        <figure class="mark-preview">
+          <img src="/mark.svg" alt="Smeltery’s pixel plant mark" width="150" height="156" />
+          <figcaption>Original mark</figcaption>
+        </figure>
+        <figure class="signature-preview">
+          <div class="signature">
+            <img src="/mark.svg" alt="" width="56" height="58" />
+            <span>
+              smeltery <span class="labs">labs</span>
+            </span>
+          </div>
+          <figcaption>The collective signature</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section aria-labelledby="social-title">
+      <p class="eyebrow">02 / The first impression</p>
+      <h2 id="social-title">
+        Less friction. <em>Worth sharing.</em>
+      </h2>
+      <p class="lede">
+        Our social preview brings the collective together in one image. Use the original PNG for
+        link previews and project introductions.
+      </p>
+      <figure class="social">
+        <img
+          src="/og.png"
+          alt="Smeltery Labs: Less friction. More making. Developer tools on a warm paper background."
+          width="1200"
+          height="630"
+          loading="lazy"
+        />
+      </figure>
+    </section>
+
+    <section aria-labelledby="color-title">
+      <p class="eyebrow">03 / Color</p>
+      <h2 id="color-title">
+        Quiet colors. <em>Clear intent.</em>
+      </h2>
+      <p class="lede">
+        Paper, charcoal, and a touch of sage. Keep text dark on light surfaces and use white for
+        text on charcoal or sage. Select a color to copy its hex value.
+      </p>
+      <ul class="palette">
+        {colors.map((color) => (
+          <li>
+            <button
+              class="swatch"
+              data-copy={color.hex}
+              aria-label={`Copy ${color.name} hex ${color.hex}`}
+              aria-live="polite"
+            >
+              <span class="color" style={{ background: color.hex }} aria-hidden="true"></span>
+              <span class="swatch-label">
+                <strong>{color.name}</strong>
+                <span class="hex" data-copy-label>
+                  {color.hex}
+                </span>
+                <span class="copy" aria-hidden="true">
+                  ⧉
+                </span>
+              </span>
+            </button>
+            <p class="fine">{color.use}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section aria-labelledby="type-title">
+      <p class="eyebrow">04 / Typography</p>
+      <h2 id="type-title">
+        A useful voice. <em>A human touch.</em>
+      </h2>
+      <div class="type-list">
+        <article>
+          <p class="eyebrow">DM Sans / Interface</p>
+          <p class="sample">Less friction. More making.</p>
+          <p class="fine">Our everyday voice for headings, navigation, and comfortable reading.</p>
+        </article>
+        <article>
+          <p class="eyebrow">Georgia / Emphasis</p>
+          <p class="sample">
+            <em>With room to breathe.</em>
+          </p>
+          <p class="fine">A softer accent for a few well-chosen words.</p>
+        </article>
+        <article>
+          <p class="eyebrow">IBM Plex Mono / Code</p>
+          <p class="sample mono">git clone</p>
+          <p class="fine">Commands and technical details, set clearly.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="downloads" aria-labelledby="downloads-title">
+      <p class="eyebrow">05 / The toolkit</p>
+      <h2 id="downloads-title">
+        Ready for <em>your next mention.</em>
+      </h2>
+      <p class="lede">
+        Download the original files, individually. Use them to identify Smeltery Labs and link back
+        to the project.
+      </p>
+      <ul class="downloads">
+        {assets.map((asset) => (
+          <li>
+            <div>
+              <h3>{asset.name}</h3>
+              <p class="fine">{asset.detail}</p>
+            </div>
+            <a
+              class="btn btn-outline"
+              href={asset.file}
+              download
+              aria-label={`Download ${asset.name}`}
+            >
+              Download <span aria-hidden="true">↓</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <aside class="guidance">
+        <h3>A little care goes a long way.</h3>
+        <p>
+          Use “Smeltery Labs” in prose and keep the mark intact. Leave clear space around it, avoid
+          stretching or recoloring, and choose a simple background. These assets identify the
+          collective; they don’t imply endorsement.
+        </p>
+      </aside>
+    </section>
+  </main>
+  <Footer />
+</Base>

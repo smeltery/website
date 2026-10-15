@@ -1,5 +1,5 @@
 ---
-import { github, tools } from "../data/site";
+import { allRepositoriesUrl, github, tools } from "../data/site";
 import SectionHead from "./SectionHead.astro";
 ---
 
@@ -36,10 +36,8 @@ import SectionHead from "./SectionHead.astro";
       </li>
     ))}
     <li class="all">
-      <a class="card" href={github}>
-        <span class="collection" aria-hidden="true">
-          ✳
-        </span>
+      <a class="card" href={allRepositoriesUrl}>
+        <img class="collection" src="/3d/anvil.webp" alt="" width="88" height="88" loading="lazy" />
         <h3>
           There’s more
           <br />
@@ -135,10 +133,10 @@ import SectionHead from "./SectionHead.astro";
     border-color: #e0e4d6;
   }
   .collection {
-    color: #7f8e69;
-    font-size: 38px;
-    line-height: 48px;
-    margin-bottom: 24px;
+    width: 88px;
+    height: 88px;
+    object-fit: contain;
+    margin: -12px 0 12px;
   }
   .all h3 {
     font-size: 26px;

@@ -1,8 +1,3 @@
----
-import { github } from "../data/site";
-import Terminal from "./Terminal.astro";
----
-
 <section class="hero wrap">
   <div class="intro">
     <div class="confetti" aria-hidden="true">
@@ -10,6 +5,16 @@ import Terminal from "./Terminal.astro";
       <img class="float fugue" src="/tools/fugue.svg" alt="" width="60" height="60" />
       <img class="float context" src="/tools/context.svg" alt="" width="60" height="60" />
       <img class="float airlock" src="/tools/airlock.svg" alt="" width="60" height="60" />
+      <img class="float extra agnt" src="/repositories/agnt.png" alt="" width="48" height="48" />
+      <img
+        class="float extra convrt"
+        src="/repositories/convrt.svg"
+        alt=""
+        width="44"
+        height="44"
+      />
+      <img class="float extra prr" src="/repositories/prr.svg" alt="" width="44" height="44" />
+      <img class="float extra yeet" src="/repositories/yeet.svg" alt="" width="48" height="48" />
       <span class="spark one">✳</span>
       <span class="spark two">✦</span>
     </div>
@@ -29,29 +34,11 @@ import Terminal from "./Terminal.astro";
       <a class="btn btn-primary" href="#tools">
         Find your next tool <span aria-hidden="true">↓</span>
       </a>
-      <a class="text-link" href={github}>
-        Explore the forge ↗
+      <a class="text-link" href="#skills">
+        Find a skill for your agent <span aria-hidden="true">↓</span>
       </a>
     </div>
     <p class="fine">Built in the open. Made to fit your day.</p>
-  </div>
-  <div class="workbench">
-    <div class="note">
-      <p class="eyebrow">A little less in your way</p>
-      <h2>
-        Your workflow.
-        <br />
-        <em>With room to breathe.</em>
-      </h2>
-      <p class="lede">
-        AI agents, everyday CLIs, and a setup that feels like yours. Small tools that do their job,
-        then get out of the way.
-      </p>
-      <a class="text-link" href={`${github}/fugue`}>
-        Meet fugue <span aria-hidden="true">↗</span>
-      </a>
-    </div>
-    <Terminal />
   </div>
 </section>
 <style>
@@ -121,6 +108,30 @@ import Terminal from "./Terminal.astro";
     rotate: -13deg;
     animation-delay: -1s;
   }
+  .agnt {
+    left: 22%;
+    top: 32px;
+    rotate: 10deg;
+    animation-delay: -3s;
+  }
+  .convrt {
+    right: 23%;
+    top: 37px;
+    rotate: -12deg;
+    animation-delay: -1s;
+  }
+  .prr {
+    left: 17%;
+    top: 420px;
+    rotate: -9deg;
+    animation-delay: -5s;
+  }
+  .yeet {
+    right: 16%;
+    top: 425px;
+    rotate: 12deg;
+    animation-delay: -2s;
+  }
   .spark {
     position: absolute;
     color: #b4bda3;
@@ -135,26 +146,14 @@ import Terminal from "./Terminal.astro";
     top: 60px;
     color: #d3bb79;
   }
-  .workbench {
-    display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
-    align-items: center;
-    gap: 42px;
-    padding: 40px;
-    background: #eceee5;
-    border: 1px solid #e1e4d8;
-    border-radius: 24px;
-  }
-  .note h2 {
-    font-size: 29px;
-  }
-  .note .lede {
-    font-size: 14px;
-    margin: 18px 0;
-  }
   @keyframes bob {
     to {
       transform: translateY(-10px);
+    }
+  }
+  @media (max-width: 1000px) {
+    .extra {
+      display: none;
     }
   }
   @media (max-width: 760px) {
@@ -178,22 +177,11 @@ import Terminal from "./Terminal.astro";
     .spark {
       display: none;
     }
-    .workbench {
-      grid-template-columns: 1fr;
-      padding: 26px;
-      gap: 26px;
-    }
-    .note {
-      max-width: 420px;
-    }
   }
-  @media (max-width: 380px) {
+  @media (max-width: 480px) {
     .actions {
       gap: 16px;
       flex-direction: column;
-    }
-    .workbench {
-      padding: 20px 14px;
     }
   }
 </style>

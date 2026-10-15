@@ -1,0 +1,178 @@
+---
+import AgentLogos from "./skills/AgentLogos.astro";
+import { featuredSkills, skillsUrl } from "../data/site";
+---
+
+<section class="skills wrap" id="skills" aria-labelledby="skills-title">
+  <div class="intro">
+    <div>
+      <p class="eyebrow">The Smeltery skill library</p>
+      <h2 id="skills-title">
+        Your agent.
+        <br />
+        <em>A little more know-how.</em>
+      </h2>
+      <p class="lede">
+        Give your coding agent a repeatable way to plan, debug, and review. Small instruction files,
+        ready to make your own.
+      </p>
+      <AgentLogos />
+    </div>
+    <div class="actions">
+      <a class="btn btn-primary" href={`${skillsUrl}/#library`}>
+        Explore the skill library <span aria-hidden="true">↗</span>
+      </a>
+      <a class="guide-link" href={`${skillsUrl}/guides/installation/`}>
+        <span>How skills work</span> <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+  <div class="examples">
+    <p class="eyebrow">Start with the work in front of you</p>
+    <ul>
+      {featuredSkills.map((skill) => (
+        <li>
+          <a class="skill" href={`${skillsUrl}/skills/${skill.name}/`}>
+            <span class="mark" aria-hidden="true">
+              {skill.mark}
+            </span>
+            <h3>{skill.task}</h3>
+            <p>{skill.description}</p>
+            <span class="destination">
+              Explore {skill.name} <span aria-hidden="true">↗</span>
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+<style>
+  .skills {
+    padding: 40px;
+    background: #eceee5;
+    border: 1px solid #e0e4d6;
+    border-radius: 24px;
+    scroll-margin-top: 24px;
+  }
+  .intro {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    align-items: center;
+    gap: 40px;
+  }
+  h2 {
+    font-size: clamp(30px, 3.5vw, 40px);
+  }
+  h2 em {
+    color: var(--green);
+  }
+  .lede {
+    max-width: 440px;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  .actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-self: end;
+    width: min(100%, 260px);
+    gap: 8px;
+  }
+  .guide-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    border-radius: 999px;
+    font-size: 13px;
+    color: var(--green);
+    transition: background var(--ease);
+  }
+  .guide-link:hover {
+    background: #5264470d;
+  }
+  .guide-link:hover span:first-child {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .examples {
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 1px solid #d5dacb;
+  }
+  ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .skill {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 22px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: #ffffffbd;
+    transition:
+      transform var(--ease),
+      background var(--ease);
+  }
+  .skill:hover {
+    transform: translateY(-3px);
+    background: var(--surface);
+  }
+  .mark {
+    color: var(--green);
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+  h3 {
+    font-size: 19px;
+  }
+  .skill p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 12px;
+  }
+  .destination {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 24px;
+    font-size: 12px;
+    color: var(--green);
+  }
+  @media (max-width: 760px) {
+    .skills {
+      padding: 26px;
+    }
+    .intro {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .actions {
+      justify-self: start;
+    }
+    ul {
+      grid-template-columns: 1fr;
+    }
+    .mark {
+      margin-bottom: 12px;
+    }
+  }
+  @media (max-width: 380px) {
+    .skills {
+      padding: 20px;
+    }
+    .actions {
+      width: 100%;
+    }
+    .btn {
+      padding-inline: 16px;
+    }
+  }
+</style>

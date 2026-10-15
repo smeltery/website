@@ -1,9 +1,12 @@
 ---
+import Harbor from "../components/spotlight/Harbor.astro";
+import ProjectSpotlight from "../components/spotlight/ProjectSpotlight.astro";
 import Cta from "../components/Cta.astro";
 import Footer from "../components/Footer.astro";
 import Hero from "../components/Hero.astro";
 import Nav from "../components/Nav.astro";
 import Principles from "../components/Principles.astro";
+import Skills from "../components/Skills.astro";
 import Tools from "../components/Tools.astro";
 import Base from "../layouts/Base.astro";
 ---
@@ -12,7 +15,10 @@ import Base from "../layouts/Base.astro";
   <Nav />
   <main id="main">
     <Hero />
+    <ProjectSpotlight />
     <Tools />
+    <Harbor />
+    <Skills />
     <Principles />
     <Cta />
   </main>
