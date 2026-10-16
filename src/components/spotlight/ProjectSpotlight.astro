@@ -1,5 +1,6 @@
 ---
 import { repositoryLogos } from "../../data/repository-logos";
+import { projectUrl } from "../../data/site";
 import Terminal from "../Terminal.astro";
 const projects = [
   {
@@ -65,7 +66,7 @@ const projects = [
           <p class="lede">{project.description}</p>
           <a
             class="btn btn-primary"
-            href={`https://github.com/smeltery/${project.name}`}
+            href={projectUrl(project.name)}
             target="_blank"
             rel="noopener noreferrer"
           >

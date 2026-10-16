@@ -1,5 +1,5 @@
 ---
-import { allRepositoriesUrl, github, tools } from "../data/site";
+import { allRepositoriesUrl, projectUrl, tools } from "../data/site";
 import SectionHead from "./SectionHead.astro";
 ---
 
@@ -13,7 +13,7 @@ import SectionHead from "./SectionHead.astro";
   <ul class="list">
     {tools.map((tool) => (
       <li>
-        <a class="card" href={`${github}/${tool.name}`}>
+        <a class="card" href={projectUrl(tool.name)}>
           <div class="top">
             {tool.icon ? (
               <img src={tool.icon} alt="" width="48" height="48" loading="lazy" />

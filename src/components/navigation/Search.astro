@@ -1,7 +1,7 @@
 ---
 import { repositoryLogos } from "../../data/repository-logos";
 import repositories from "../../data/repositories.json";
-import { allRepositoriesUrl, tools, featuredSkills, skillsUrl } from "../../data/site";
+import { allRepositoriesUrl, tools, featuredSkills, skillsUrl, projectUrl } from "../../data/site";
 import "../../styles/search.css";
 interface SearchEntry {
   name: string;
@@ -58,6 +58,7 @@ const entries: SearchEntry[] = [
     })
     .map((repository) => ({
       ...repository,
+      href: projectUrl(repository.name),
       icon:
         repositoryLogos[repository.name] ??
         tools.find((tool) => tool.name === repository.name)?.icon,

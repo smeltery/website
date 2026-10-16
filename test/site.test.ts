@@ -1,6 +1,6 @@
 import { describe, expect, test } from "bun:test";
 import { existsSync } from "node:fs";
-import { tools } from "../src/data/site";
+import { tools, projectUrl } from "../src/data/site";
 
 const html = await Bun.file("dist/index.html").text();
 const attrs = (name: string) =>
@@ -19,9 +19,9 @@ describe("built page", () => {
     }
   });
 
-  test("lists every featured tool with a repo link", () => {
+  test("lists every featured tool with its destination", () => {
     for (const tool of tools) {
-      expect(html).toContain(`href="https://github.com/smeltery/${tool.name}"`);
+      expect(html).toContain(`href="${projectUrl(tool.name)}"`);
     }
   });
 

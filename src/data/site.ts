@@ -1,5 +1,9 @@
 export const allRepositoriesUrl = "https://github.com/orgs/smeltery/repositories";
 export const github = "https://github.com/smeltery";
+export const projectWebsites: Record<string, string> = {
+  loft: "https://loft-delta.vercel.app/",
+};
+export const projectUrl = (name: string) => projectWebsites[name] ?? `${github}/${name}`;
 export const skillsUrl = "https://smeltery-skills.vercel.app";
 export const featuredSkills = [
   {
