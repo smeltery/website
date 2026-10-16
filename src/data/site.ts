@@ -1,6 +1,7 @@
 export const allRepositoriesUrl = "https://github.com/orgs/smeltery/repositories";
 export const github = "https://github.com/smeltery";
 export const projectWebsites: Record<string, string> = {
+  hermes: "https://hermes-logging.vercel.app/",
   loft: "https://loft-delta.vercel.app/",
 };
 export const projectUrl = (name: string) => projectWebsites[name] ?? `${github}/${name}`;
@@ -50,6 +51,15 @@ export interface Tool {
 }
 
 export const tools: Tool[] = [
+  {
+    name: "hermes",
+    icon: "/repositories/hermes.svg",
+    category: "Development",
+    platform: "Java",
+    blurb:
+      "Logging for modern Java, with compile-time logger injection, async output, and Spring Boot integration.",
+    short: "Less boilerplate for modern Java logging.",
+  },
   {
     name: "showrunner",
     icon: "/repositories/showrunner.svg",
