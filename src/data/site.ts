@@ -1,6 +1,9 @@
 export const allRepositoriesUrl = "https://github.com/orgs/smeltery/repositories";
 export const github = "https://github.com/smeltery";
 export const projectWebsites: Record<string, string> = {
+  glimpse: "https://glimpse-black.vercel.app/",
+  aptscout: "https://aptscout-five.vercel.app/",
+  showrunner: "https://showrunner-orpin-phi.vercel.app/",
   "pyreload-cli": "https://pyreload-cli.vercel.app/",
   hermes: "https://hermes-logging.vercel.app/",
   loft: "https://loft-delta.vercel.app/",
@@ -52,6 +55,24 @@ export interface Tool {
 }
 
 export const tools: Tool[] = [
+  {
+    name: "glimpse",
+    icon: "/repositories/glimpse.svg",
+    category: "Development",
+    platform: "CLI",
+    blurb:
+      "Review Git diffs in your browser, leave inline feedback, and hand comments to your coding agent.",
+    short: "A clearer view of your code changes.",
+  },
+  {
+    name: "aptscout",
+    icon: "/repositories/aptscout.svg",
+    category: "Everyday",
+    platform: "CLI",
+    blurb:
+      "Track apartment availability and price history across properties, with a filterable web interface.",
+    short: "Keep an eye on your next apartment.",
+  },
   {
     name: "pyreload-cli",
     icon: "/repositories/pyreload-cli.svg",

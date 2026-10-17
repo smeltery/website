@@ -22,7 +22,7 @@
   {
     "repository": "aptscout",
     "asset": "/repositories/aptscout.svg",
-    "source": "https://raw.githubusercontent.com/smeltery/aptscout/846f78de88aeaf827d44abb537a7550e5a32eab4/website/public/favicon.svg"
+    "source": "https://raw.githubusercontent.com/smeltery/aptscout/3db3e72cdeb4158c9333e3b4bf31f4980a2b2e67/website/public/logo.svg"
   },
   {
     "repository": "bold-performance",
@@ -72,7 +72,7 @@
   {
     "repository": "glimpse",
     "asset": "/repositories/glimpse.svg",
-    "source": "https://raw.githubusercontent.com/smeltery/glimpse/7e537e8218524c6947ec2bd0d8e10b4ef72871a2/website/public/favicon.svg"
+    "source": "https://raw.githubusercontent.com/smeltery/glimpse/44dd8475a9aff553b1ce47bfa8960e5380a470a9/website/public/favicon.svg"
   },
   {
     "repository": "harbor",

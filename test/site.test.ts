@@ -12,7 +12,7 @@ describe("built page", () => {
       "Less friction.",
       'id="tools"',
       'id="principles"',
-      "Explore Smeltery on GitHub",
+      "data-project-picker",
       'id="skills"',
     ]) {
       expect(html).toContain(marker);

@@ -1,231 +1,100 @@
 ---
-import { repositoryLogos } from "../../data/repository-logos";
-import { projectUrl } from "../../data/site";
+import { spotlightProjects as projects } from "../../data/spotlight";
 import Terminal from "../Terminal.astro";
-const projects = [
-  {
-    name: "fugue",
-    title: "Your workflow. With room to breathe.",
-    description:
-      "Incognito mode for AI coding agents. Keep sensitive context out of the trail, and give your workflow a little more peace of mind.",
-    action: "Meet fugue",
-  },
-  {
-    name: "trousseau",
-    title: "Your day. Your plans. One shared budget.",
-    description: "Keep your wedding budget together, from the first idea to the final detail.",
-    action: "Explore Trousseau",
-  },
-  {
-    name: "convrt",
-    title: "The right format. Just a right-click away.",
-    description: "Convert files with native engines that run entirely on your machine.",
-    action: "Explore convrt",
-  },
-  {
-    name: "loft",
-    title: "More space for your Mac.",
-    description:
-      "Keep your files in the cloud and close at hand, with a drive that feels at home in Finder.",
-    action: "Explore Loft",
-  },
-];
+import "../../styles/spotlight.css";
 ---
 
 <section
   class="spotlight wrap"
-  aria-label="Project spotlight"
+  aria-label="Discover a project"
   aria-roledescription="carousel"
   data-spotlight
 >
-  <div class="spotlight-heading">
-    <p class="eyebrow">A little something for your next chapter</p>
-    <button type="button" data-rotation aria-label="Pause project rotation">
-      Pause
-    </button>
-  </div>
-  <div class="slides" aria-live="off">
+  <div class="spotlight-slides" aria-live="off">
     {projects.map((project, index) => (
       <div
-        class="slide"
+        class="spotlight-slide"
         data-slide
         hidden={index !== 0}
         role="group"
         aria-roledescription="slide"
-        aria-label={`${index + 1} of ${projects.length}: ${project.name}`}
+        aria-label={`${index + 1} of ${projects.length}: ${project.label}`}
       >
-        <div class="copy">
-          <img
-            class="feature-logo"
-            src={repositoryLogos[project.name]}
-            width="48"
-            height="48"
-            alt=""
-          />
-          <h2>{project.title}</h2>
-          <p class="lede">{project.description}</p>
-          <a
-            class="btn btn-primary"
-            href={projectUrl(project.name)}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {project.action} <span aria-hidden="true">↗</span>
+        <div class="spotlight-copy">
+          <div class="spotlight-identity">
+            <img src={project.logo} width="32" height="32" alt="" />
+            <span>{project.label}</span>
+          </div>
+          <h2>
+            {project.title}
+            <br />
+            <em>{project.accent}</em>
+          </h2>
+          <p>{project.description}</p>
+          <a class="btn btn-primary" href={project.url} target="_blank" rel="noopener noreferrer">
+            Explore {project.label} <span aria-hidden="true">↗</span>
           </a>
         </div>
-        {project.name === "fugue" ? (
-          <Terminal />
-        ) : (
-          <div class="project-art">
-            <img
-              src={`/spotlight/${project.name}.${project.name === "trousseau" ? "webp" : "png"}`}
-              width="1200"
-              height="630"
-              alt={`${project.name} project preview`}
-              loading="lazy"
-            />
-          </div>
-        )}
+        <div class="spotlight-preview" aria-hidden="true">
+          {project.image ? (
+            <img src={project.image} width="1200" height="630" alt="" loading="lazy" />
+          ) : project.name === "fugue" ? (
+            <Terminal />
+          ) : null}
+        </div>
       </div>
     ))}
   </div>
-  <div class="controls">
-    <div class="project-tabs" role="group" aria-label="Choose a featured project">
-      {projects.map((project, index) => (
-        <button type="button" data-project={index} aria-pressed={index === 0}>
-          {project.name}
-        </button>
-      ))}
-    </div>
-    <span class="position" data-position aria-hidden="true">
-      01 / {String(projects.length).padStart(2, "0")}
-    </span>
+  <div class="spotlight-controls">
+    <details data-project-picker>
+      <summary>
+        <img data-selected-logo src={projects[0]!.logo} width="24" height="24" alt="" />
+        <span data-selected-name>{projects[0]!.label}</span>
+        <span data-position>1 / {projects.length}</span>
+        <span class="picker-chevron" aria-hidden="true">
+          ⌄
+        </span>
+      </summary>
+      <div class="spotlight-picker">
+        <label for="spotlight-filter">Switch project</label>
+        <input
+          id="spotlight-filter"
+          type="search"
+          placeholder="Find a project…"
+          autocomplete="off"
+        />
+        <div class="spotlight-options" role="group" aria-label="Featured projects">
+          {projects.map((project, index) => (
+            <button
+              type="button"
+              data-project={index}
+              data-name={project.label}
+              data-keywords={`${project.name} ${project.description}`}
+              aria-pressed={index === 0}
+            >
+              <img src={project.logo} width="24" height="24" alt="" />
+              <span>{project.label}</span>
+              <span class="selected-check" aria-hidden="true">
+                ✓
+              </span>
+            </button>
+          ))}
+        </div>
+        <p data-empty hidden>
+          No projects found. Try another name.
+        </p>
+      </div>
+    </details>
+    <button
+      class="spotlight-rotation"
+      type="button"
+      data-rotation
+      aria-label="Pause project rotation"
+    >
+      Pause
+    </button>
   </div>
 </section>
 <script>
   import "../../scripts/spotlight";
 </script>
-<style>
-  .spotlight {
-    margin-top: 0;
-    padding: 24px 40px 18px;
-    border: 1px solid var(--line);
-    border-radius: 24px;
-    background: #eceee5;
-  }
-  .spotlight-heading {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-  }
-  .eyebrow {
-    margin: 0;
-  }
-  [data-rotation] {
-    background: transparent;
-    color: var(--muted);
-    font-size: 12px;
-    min-height: 44px;
-    padding: 8px 12px;
-    border-radius: 999px;
-  }
-  .slides {
-    display: grid;
-    margin: 20px 0 28px;
-  }
-  .slide {
-    grid-area: 1 / 1;
-    display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-    gap: 42px;
-    align-items: center;
-  }
-  .slide[hidden] {
-    display: grid;
-    visibility: hidden;
-    pointer-events: none;
-  }
-  .feature-logo {
-    margin-bottom: 20px;
-  }
-  .copy .btn {
-    margin-top: 24px;
-  }
-  .project-art {
-    overflow: hidden;
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    background: var(--surface);
-    box-shadow: 0 16px 32px #292b2514;
-    transform: rotate(1.5deg);
-  }
-  .project-art img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-  h2 {
-    font-size: clamp(23px, 2.4vw, 30px);
-    max-width: 600px;
-  }
-  .lede {
-    margin-top: 12px;
-    font-size: 14px;
-    max-width: 580px;
-  }
-  .controls {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    border-top: 1px solid var(--line);
-    padding-top: 12px;
-  }
-  .project-tabs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-  .project-tabs button {
-    min-height: 44px;
-    border-radius: 999px;
-    padding: 8px 14px;
-    font-size: 12px;
-    background: transparent;
-    color: var(--muted);
-  }
-  .project-tabs button[aria-pressed="true"] {
-    background: #fff;
-    color: var(--green);
-  }
-  button:hover {
-    background: #eceee5;
-  }
-  .position {
-    font: 11px var(--font-mono);
-    color: var(--muted);
-    white-space: nowrap;
-  }
-  @media (max-width: 760px) {
-    .spotlight {
-      padding: 20px;
-    }
-    .slide {
-      grid-template-columns: minmax(0, 1fr);
-      gap: 28px;
-    }
-    .project-art {
-      transform: rotate(1deg);
-    }
-    .project-tabs {
-      gap: 2px;
-    }
-    .project-tabs button {
-      padding-inline: 10px;
-    }
-    .position {
-      display: none;
-    }
-  }
-</style>
