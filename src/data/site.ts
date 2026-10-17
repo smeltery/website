@@ -1,6 +1,7 @@
 export const allRepositoriesUrl = "https://github.com/orgs/smeltery/repositories";
 export const github = "https://github.com/smeltery";
 export const projectWebsites: Record<string, string> = {
+  "pyreload-cli": "https://pyreload-cli.vercel.app/",
   hermes: "https://hermes-logging.vercel.app/",
   loft: "https://loft-delta.vercel.app/",
 };
@@ -51,6 +52,15 @@ export interface Tool {
 }
 
 export const tools: Tool[] = [
+  {
+    name: "pyreload-cli",
+    icon: "/repositories/pyreload-cli.svg",
+    category: "Development",
+    platform: "Python",
+    blurb:
+      "Restart Python apps when files change. Keep your flow, with polling support for containers and mounted filesystems.",
+    short: "Automatic restarts for Python development.",
+  },
   {
     name: "hermes",
     icon: "/repositories/hermes.svg",
