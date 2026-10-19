@@ -105,6 +105,11 @@
     "source": "https://raw.githubusercontent.com/smeltery/mav/43785a6d76d7a9ecd790c4797e82ea713eeed23e/assets/images/mav_logo.svg"
   },
   {
+    "repository": "next-ui",
+    "asset": "/repositories/next-ui.svg",
+    "source": "https://raw.githubusercontent.com/smeltery/next-ui/965fa26c6a17aee1ab133371370af7cc290a2c3a/public/brand/mark.svg"
+  },
+  {
     "repository": "porthole",
     "asset": "/repositories/porthole.svg",
     "source": "https://raw.githubusercontent.com/smeltery/porthole/db29c8332874abff650af109fb9e7920fe9b6f1d/assets/logo.svg"

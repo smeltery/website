@@ -255,6 +255,11 @@
     "href": "https://github.com/smeltery/mav"
   },
   {
+    "name": "next-ui",
+    "description": "Copy-paste React components with live previews and customizable TypeScript source.",
+    "href": "https://github.com/smeltery/next-ui"
+  },
+  {
     "name": "nushell",
     "description": "Sensible defaults for nushell.",
     "href": "https://github.com/smeltery/nushell"

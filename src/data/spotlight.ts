@@ -3,6 +3,15 @@ import { repositoryLogos } from "./repository-logos";
 
 const entries = [
   {
+    name: "next-ui",
+    label: "Next UI",
+    title: "Better React UI.",
+    accent: "Copy. Paste. Ship.",
+    description:
+      "Explore live component previews, take the TypeScript source, and make every interaction your own. A little polish for your next idea.",
+    image: "previews/next-ui.webp",
+  },
+  {
     name: "prr",
     label: "prr",
     title: "Catch bugs",
