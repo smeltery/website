@@ -57,7 +57,7 @@
   {
     "repository": "distill",
     "asset": "/repositories/distill.svg",
-    "source": "https://raw.githubusercontent.com/smeltery/distill/b3eedbf32df45da25115c4e7e3b2d20e8286fb77/website/public/favicon.svg"
+    "source": "https://raw.githubusercontent.com/smeltery/distill/aed1e811d54c949c562a5694669b1f3f2954e012/website/public/favicon.svg"
   },
   {
     "repository": "ember",
@@ -112,7 +112,7 @@
   {
     "repository": "prr",
     "asset": "/repositories/prr.svg",
-    "source": "https://raw.githubusercontent.com/smeltery/prr/ebdae9ca8fc997f5933b987bc126159c38d14d0d/website/public/favicon.svg"
+    "source": "https://raw.githubusercontent.com/smeltery/prr/2af9d481ec3e53c4d823590bb70525abf074334c/website/public/logo.svg"
   },
   {
     "repository": "pyreload-cli",

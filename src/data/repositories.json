@@ -141,7 +141,7 @@
   },
   {
     "name": "distill",
-    "description": "Compact technical books, documentation, and reference material into agent-optimized markdown. Outputs structured context repos that plug directly into Warp, Claude Code, or any agent that reads markdown.",
+    "description": "Compact local Markdown into focused knowledge for AI agents, using templates and your preferred CLI or API provider.",
     "href": "https://github.com/smeltery/distill"
   },
   {
@@ -286,7 +286,7 @@
   },
   {
     "name": "prr",
-    "description": "Run AI-powered code reviews on GitHub pull requests. Outputs structured, human-readable markdown comments for easy copy-paste into GitHub.",
+    "description": "AI code reviews for GitHub pull requests and local branches, with verified findings and readable Markdown results.",
     "href": "https://github.com/smeltery/prr"
   },
   {

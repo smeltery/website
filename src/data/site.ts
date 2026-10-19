@@ -1,6 +1,8 @@
 export const allRepositoriesUrl = "https://github.com/orgs/smeltery/repositories";
 export const github = "https://github.com/smeltery";
 export const projectWebsites: Record<string, string> = {
+  prr: "https://prr-seven.vercel.app/",
+  distill: "https://distill-ochre.vercel.app/",
   iconforge: "https://iconforge-gamma.vercel.app/",
   glimpse: "https://glimpse-black.vercel.app/",
   aptscout: "https://aptscout-five.vercel.app/",
@@ -182,7 +184,7 @@ export const tools: Tool[] = [
     category: "Development",
     platform: "CLI",
     blurb:
-      "Run AI-powered pull request reviews and get readable Markdown comments ready for GitHub.",
+      "Review GitHub pull requests and local branches with AI, verify findings, and browse readable Markdown results.",
     short: "A second look at your pull requests.",
   },
   {
@@ -191,8 +193,8 @@ export const tools: Tool[] = [
     category: "Agents",
     platform: "CLI",
     blurb:
-      "Turn technical books and documentation into structured Markdown context for your coding agent.",
-    short: "Useful reference material, ready for agents.",
+      "Compact local Markdown into focused knowledge for AI agents, using templates and your preferred CLI or API provider.",
+    short: "Less context. More clarity for your agent.",
   },
   {
     name: "yeet",

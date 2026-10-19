@@ -3,6 +3,24 @@ import { repositoryLogos } from "./repository-logos";
 
 const entries = [
   {
+    name: "prr",
+    label: "prr",
+    title: "Catch bugs",
+    accent: "before you merge.",
+    description:
+      "Get a second look at GitHub pull requests and local branches. Review with your chosen AI agent, verify findings, and share the results when you’re ready.",
+    image: "previews/prr.webp",
+  },
+  {
+    name: "distill",
+    label: "Distill",
+    title: "Less context.",
+    accent: "More clarity.",
+    description:
+      "Turn local Markdown into focused knowledge your AI agent can use. Choose a template and your preferred CLI or API provider to keep what matters.",
+    image: "previews/distill.webp",
+  },
+  {
     name: "iconforge",
     label: "IconForge",
     title: "Small icon.",
