@@ -85,6 +85,11 @@
     "source": "https://raw.githubusercontent.com/smeltery/hermes/a0be66eeae3375ee4b8c6509d72ff40ac8f7b06c/website/public/favicon.svg"
   },
   {
+    "repository": "iconforge",
+    "asset": "/repositories/iconforge.svg",
+    "source": "https://raw.githubusercontent.com/smeltery/iconforge/4a8a4a2e1bc450cebff70625c4df93d0d3aab479/public/logo.svg"
+  },
+  {
     "repository": "jeabizdev.com",
     "asset": "/repositories/jeabizdev.com.svg",
     "source": "https://raw.githubusercontent.com/smeltery/jeabizdev.com/e0e0a5beb03de31d21cd05ea45fc7e533b64c86f/public/brand/mark.svg"

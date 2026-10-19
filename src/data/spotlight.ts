@@ -3,6 +3,15 @@ import { repositoryLogos } from "./repository-logos";
 
 const entries = [
   {
+    name: "iconforge",
+    label: "IconForge",
+    title: "Small icon.",
+    accent: "Big character.",
+    description:
+      "Pick a shape, find your color, and make a little mark of your own. Stack icons, preview your design, and export PNG or ICO files in your browser.",
+    image: "previews/iconforge.webp",
+  },
+  {
     name: "glimpse",
     label: "Glimpse",
     title: "Small changes.",

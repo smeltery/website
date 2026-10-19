@@ -1,6 +1,7 @@
 export const allRepositoriesUrl = "https://github.com/orgs/smeltery/repositories";
 export const github = "https://github.com/smeltery";
 export const projectWebsites: Record<string, string> = {
+  iconforge: "https://iconforge-gamma.vercel.app/",
   glimpse: "https://glimpse-black.vercel.app/",
   aptscout: "https://aptscout-five.vercel.app/",
   showrunner: "https://showrunner-orpin-phi.vercel.app/",
@@ -55,6 +56,15 @@ export interface Tool {
 }
 
 export const tools: Tool[] = [
+  {
+    name: "iconforge",
+    icon: "/repositories/iconforge.svg",
+    category: "Design",
+    platform: "web",
+    blurb:
+      "Create favicons with live color and size controls, icon stacking, and PNG or ICO exports right in your browser.",
+    short: "Small icon. Big character. Create your next favicon.",
+  },
   {
     name: "glimpse",
     icon: "/repositories/glimpse.svg",

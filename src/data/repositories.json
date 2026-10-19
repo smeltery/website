@@ -210,6 +210,11 @@
     "href": "https://github.com/smeltery/homebrew-tap"
   },
   {
+    "name": "iconforge",
+    "description": "Create favicons with live color and size controls, icon stacking, and browser-based PNG and ICO exports.",
+    "href": "https://github.com/smeltery/iconforge"
+  },
+  {
     "name": "image-signing-travis-example",
     "description": "Demonstrate how to create and sign a docker image in Travis CI and push it into a container registry.",
     "href": "https://github.com/smeltery/image-signing-travis-example"
